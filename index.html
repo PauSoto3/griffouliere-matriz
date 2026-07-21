@@ -9,18 +9,15 @@
 :root{
   --bg:#111317;--surface:#1a1d24;--surface2:#22262f;--border:#2e3340;
   --red:#C41E24;--red-light:rgba(196,30,36,.12);
-  --green:#1a7a3c;--green-bg:#0d2e1a;--green-light:#22c55e;--green-sub:rgba(26,122,60,.12);
-  --amber:#d97706;--amber-light:#fbbf24;
+  --green:#1a7a3c;--green-bg:#0d2e1a;--green-light:#22c55e;--green-sub:rgba(26,122,60,.15);
+  --amber:#d97706;--amber-light:#fbbf24;--amber-sub:rgba(217,119,6,.15);
+  --teal:#0891b2;--teal-light:#22d3ee;--teal-sub:rgba(8,145,178,.12);
   --blue:#1d4ed8;--blue-bg:#0d1526;--blue-light:#60a5fa;--blue-sub:rgba(29,78,216,.12);
   --orange:#ea580c;--orange-bg:#1c0f06;--orange-light:#fb923c;--orange-sub:rgba(234,88,12,.12);
   --text:#e8eaf0;--text-muted:#8892a4;--text-dim:#4a5568;
   --charcoal:#2D2D2D;--font-d:'Barlow Condensed',sans-serif;--font-b:'Barlow',sans-serif;--r:6px;
 }
-/* MODO CLARO */
-body.light{
-  --bg:#f0f2f5;--surface:#ffffff;--surface2:#f5f7fa;--border:#dde1ea;
-  --text:#1a1d24;--text-muted:#5a6478;--text-dim:#9aa3b2;--charcoal:#2D2D2D;
-}
+body.light{--bg:#f0f2f5;--surface:#fff;--surface2:#f5f7fa;--border:#dde1ea;--text:#1a1d24;--text-muted:#5a6478;--text-dim:#9aa3b2;}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height:100vh;overflow-x:hidden;transition:background .2s,color .2s}
 
@@ -30,10 +27,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 .nav-logo span{color:var(--red)}
 .nav-badge{background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:1px}
 .nav-right{margin-left:auto;display:flex;gap:6px;align-items:center}
-.last-upd{font-size:11px;color:rgba(255,255,255,.5)}
-.btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);
-  padding:5px 11px;border-radius:var(--r);cursor:pointer;font-size:11px;font-family:var(--font-b);transition:all .15s;white-space:nowrap}
-.btn:hover{background:rgba(255,255,255,.15);color:#fff}
+.last-upd{font-size:11px;color:rgba(255,255,255,.45)}
+.btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);
+  padding:5px 11px;border-radius:var(--r);cursor:pointer;font-size:11px;font-family:var(--font-b);transition:all .15s}
+.btn:hover{background:rgba(255,255,255,.16);color:#fff}
 .btn:disabled{opacity:.4;cursor:not-allowed}
 .btn-icon{width:30px;height:30px;display:flex;align-items:center;justify-content:center;padding:0;font-size:15px}
 
@@ -46,15 +43,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 .alert-title{font-family:var(--font-d);font-weight:700;font-size:15px;color:var(--orange-light);margin-bottom:4px}
 .alert-detail{font-size:13px;color:var(--text-muted);line-height:1.7}
 .miss-tag{display:inline-flex;align-items:center;gap:4px;background:rgba(234,88,12,.18);
-  border:1px solid rgba(234,88,12,.35);color:var(--orange-light);
-  padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;margin:2px 3px}
+  border:1px solid rgba(234,88,12,.35);color:var(--orange-light);padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;margin:2px 3px}
 .alert-close{background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:20px;padding:0 4px}
 @keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 
 /* HERO */
 .hero{background:var(--surface);border-bottom:1px solid var(--border);padding:13px 16px}
-.hero-lbl{font-family:var(--font-d);font-weight:700;font-size:11px;letter-spacing:2px;
-  text-transform:uppercase;color:var(--text-muted);margin-bottom:9px}
+.hero-lbl{font-family:var(--font-d);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:9px}
 .hero-ccs{display:flex;gap:7px;flex-wrap:wrap}
 .hero-cc{display:flex;flex-direction:column;align-items:center;gap:5px;
   background:var(--surface2);border:2px solid var(--border);border-radius:8px;
@@ -64,42 +59,35 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 .hero-cc-lbl{font-family:var(--font-d);font-weight:700;font-size:11px;color:var(--text);text-align:center;line-height:1.3}
 .hero-cc-nums{display:flex;gap:4px}
 .ccn{font-family:var(--font-d);font-weight:800;font-size:12px;padding:1px 5px;border-radius:3px}
-.ccn.s{color:var(--blue-light);background:var(--blue-sub)}
-.ccn.p{color:var(--green-light);background:var(--green-sub)}
+.ccn.av{color:var(--green-light);background:var(--green-sub)}
+.ccn.ok{color:var(--teal-light);background:var(--teal-sub)}
 .ccn.f{color:var(--orange-light);background:var(--orange-sub)}
 
 /* LAYOUT */
 .main{display:flex;height:calc(100vh - 50px);overflow:hidden}
-
-/* SIDEBAR */
-.sidebar{width:260px;background:var(--surface);border-right:1px solid var(--border);
-  display:flex;flex-direction:column;overflow:hidden;flex-shrink:0}
+.sidebar{width:260px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;flex-shrink:0}
 .sb-head{padding:10px 12px 9px;border-bottom:1px solid var(--border)}
-.sb-title{font-family:var(--font-d);font-weight:700;font-size:11px;letter-spacing:1.5px;
-  text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
+.sb-title{font-family:var(--font-d);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
 .search{position:relative}
-.search input{width:100%;background:var(--surface2);border:1px solid var(--border);
-  color:var(--text);padding:7px 10px 7px 30px;border-radius:var(--r);
-  font-family:var(--font-b);font-size:13px;outline:none;transition:border-color .2s}
+.search input{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);
+  padding:7px 10px 7px 30px;border-radius:var(--r);font-family:var(--font-b);font-size:13px;outline:none;transition:border-color .2s}
 .search input:focus{border-color:var(--red)}
 .search-ico{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:var(--text-dim);font-size:13px}
 .sb-filters{display:flex;gap:4px;padding:6px 10px;border-bottom:1px solid var(--border);flex-wrap:wrap}
 .chip{padding:3px 8px;border-radius:20px;font-size:10px;font-weight:600;cursor:pointer;border:1px solid transparent;transition:all .15s}
 .chip-all{border-color:var(--text-dim);color:var(--text-muted)}.chip-all.on{background:var(--surface2);border-color:#888;color:var(--text)}
+.chip-av{border-color:var(--green);color:var(--green-light)}.chip-av.on{background:var(--green-bg)}
+.chip-ok{border-color:var(--teal);color:var(--teal-light)}.chip-ok.on{background:rgba(8,145,178,.1)}
 .chip-serv{border-color:var(--blue);color:var(--blue-light)}.chip-serv.on{background:var(--blue-sub)}
-.chip-puede{border-color:var(--green);color:var(--green-light)}.chip-puede.on{background:var(--green-bg)}
 .chip-falta{border-color:var(--orange);color:var(--orange-light)}.chip-falta.on{background:var(--orange-bg)}
 .sb-zone{padding:5px 10px;border-bottom:1px solid var(--border)}
-.sb-zone select{width:100%;background:var(--surface2);border:1px solid var(--border);
-  color:var(--text);padding:5px 8px;border-radius:var(--r);font-family:var(--font-b);font-size:11px;outline:none}
+.sb-zone select{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:5px 8px;border-radius:var(--r);font-family:var(--font-b);font-size:11px;outline:none}
 .sb-zone select:focus{border-color:var(--red)}
 .driver-list{overflow-y:auto;flex:1}
-.d-item{padding:8px 12px;border-bottom:1px solid var(--border);cursor:pointer;
-  display:flex;align-items:center;gap:8px;transition:background .12s}
+.d-item{padding:8px 12px;border-bottom:1px solid var(--border);cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .12s}
 .d-item:hover{background:var(--surface2)}
 .d-item.sel{background:var(--red-light);border-left:3px solid var(--red)}
-.d-ava{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-family:var(--font-d);font-weight:700;font-size:12px;flex-shrink:0}
+.d-ava{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:700;font-size:12px;flex-shrink:0}
 .d-info{flex:1;min-width:0}
 .d-name{font-size:11px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .d-sub{font-size:10px;color:var(--text-muted);margin-top:1px}
@@ -108,14 +96,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 /* CONTENT */
 .content{flex:1;display:flex;flex-direction:column;overflow:hidden}
 .stats{display:flex;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0}
-.stat{flex:1;padding:8px 12px;text-align:center;border-right:1px solid var(--border)}
-.stat:last-child{border-right:none;flex:2;text-align:left;padding-left:14px;display:flex;align-items:center;justify-content:space-between}
-.stat-v{font-family:var(--font-d);font-weight:800;font-size:22px}
+.stat{flex:1;padding:8px 10px;text-align:center;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none;flex:1.5;text-align:left;padding-left:12px;display:flex;align-items:center;justify-content:space-between}
+.stat-v{font-family:var(--font-d);font-weight:800;font-size:20px}
 .stat-l{font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-top:1px}
 .tabs{display:flex;background:var(--surface);border-bottom:1px solid var(--border);padding:0 14px;gap:2px;flex-shrink:0}
 .tab{padding:10px 12px 8px;font-family:var(--font-d);font-weight:600;font-size:12px;
-  letter-spacing:.5px;color:var(--text-muted);cursor:pointer;border-bottom:2px solid transparent;
-  transition:all .15s;text-transform:uppercase}
+  letter-spacing:.5px;color:var(--text-muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;text-transform:uppercase}
 .tab:hover{color:var(--text)}.tab.on{color:var(--text);border-bottom-color:var(--red)}
 
 /* QUICK VIEW */
@@ -123,28 +110,28 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 .qv-title{font-family:var(--font-d);font-weight:800;font-size:18px;margin-bottom:4px}
 .qv-sub{font-size:12px;color:var(--text-muted);margin-bottom:13px}
 .qv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:9px}
-.qv-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;
-  padding:12px;cursor:pointer;transition:all .2s}
+.qv-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px;cursor:pointer;transition:all .2s}
 .qv-card:hover{border-color:var(--text-muted);transform:translateY(-1px)}
-.qv-card.puede{border-left:4px solid var(--green-light)}
+.qv-card.avalado{border-left:4px solid var(--green-light)}
+.qv-card.avalado_falta{border-left:4px solid var(--amber-light)}
+.qv-card.puede{border-left:4px solid var(--teal-light)}
 .qv-card.serv{border-left:4px solid var(--blue-light)}
 .qv-top{display:flex;justify-content:space-between;margin-bottom:8px}
-.qv-ava{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-family:var(--font-d);font-weight:700;font-size:13px}
+.qv-ava{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:700;font-size:13px}
 .qv-pct{font-family:var(--font-d);font-weight:800;font-size:14px}
-.qv-name{font-family:var(--font-d);font-weight:700;font-size:13px;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qv-name{font-family:var(--font-d);font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .qv-sub2{font-size:10px;color:var(--text-muted);margin-top:2px}
-.qv-badge{display:inline-flex;align-items:center;gap:3px;margin-top:8px;
-  padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700}
-.qv-badge.puede{background:var(--green-sub);color:var(--green-light)}
+.qv-badge{display:inline-flex;align-items:center;gap:3px;margin-top:8px;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700}
+.qv-badge.avalado{background:var(--green-sub);color:var(--green-light)}
+.qv-badge.avalado_falta{background:var(--amber-sub);color:var(--amber-light)}
+.qv-badge.puede{background:var(--teal-sub);color:var(--teal-light)}
 .qv-badge.serv{background:var(--blue-sub);color:var(--blue-light)}
+.qv-missing{font-size:10px;color:var(--text-muted);margin-top:4px;line-height:1.4}
 
 /* DETAIL */
 .detail{flex:1;overflow-y:auto;padding:16px 18px}
 .d-hdr{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border)}
-.d-big-ava{width:48px;height:48px;border-radius:9px;display:flex;align-items:center;
-  justify-content:center;font-family:var(--font-d);font-weight:800;font-size:19px;flex-shrink:0}
+.d-big-ava{width:48px;height:48px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:800;font-size:19px;flex-shrink:0}
 .d-full-name{font-family:var(--font-d);font-weight:700;font-size:20px;letter-spacing:.3px;line-height:1.2}
 .d-meta{font-size:11px;color:var(--text-muted);margin-top:5px;display:flex;gap:10px;flex-wrap:wrap}
 .poly-wrap{margin-bottom:14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 13px}
@@ -153,27 +140,43 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 .poly-val{font-family:var(--font-d);font-weight:800;font-size:18px}
 .poly-bar{height:7px;background:var(--surface2);border-radius:4px;overflow:hidden}
 .poly-fill{height:100%;border-radius:4px;transition:width .6s ease}
-.sec-lbl{font-family:var(--font-d);font-weight:700;font-size:10px;letter-spacing:2px;
-  text-transform:uppercase;color:var(--text-muted);margin-bottom:7px;margin-top:13px}
+.sec-lbl{font-family:var(--font-d);font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:7px;margin-top:13px}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
 .tag{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;border:1px solid transparent;display:flex;align-items:center;gap:4px}
 .tag-y{background:var(--green-sub);border-color:rgba(26,122,60,.35);color:var(--green-light)}
 .tag-n{background:rgba(30,34,44,.5);border-color:var(--border);color:var(--text-dim)}
 body.light .tag-n{background:rgba(200,210,225,.3)}
+
+/* CONTRACT CARDS - 5 estados */
 .cc-grid{display:flex;flex-direction:column;gap:5px;margin-top:5px}
 .cc-card{background:var(--surface);border:1px solid var(--border);border-radius:7px;overflow:hidden}
-.cc-card.s-serv{border-left:4px solid var(--blue-light)}
-.cc-card.s-puede{border-left:4px solid var(--green-light)}
-.cc-card.s-falta{border-left:4px solid var(--orange-light)}
+/* EN SERVICIO */
+.cc-card.s-serv      {border-left:4px solid var(--blue-light)}
+/* AVALADO completo */
+.cc-card.s-avalado   {border-left:4px solid var(--green-light)}
+/* AVALADO pero faltan unidades/certs */
+.cc-card.s-avfalta   {border-left:4px solid var(--amber-light)}
+/* Cumple requisitos pero falta aval */
+.cc-card.s-puede     {border-left:4px solid var(--teal-light)}
+/* Falta todo */
+.cc-card.s-falta     {border-left:4px solid var(--orange-light)}
+
 .cc-hdr{padding:8px 12px;display:flex;align-items:center;gap:9px}
-.cc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.cc-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 .cc-name{font-family:var(--font-d);font-weight:600;font-size:13px;flex:1}
-.cc-badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;text-transform:uppercase}
-.b-serv{background:var(--blue-sub);color:var(--blue-light)}
-.b-puede{background:var(--green-sub);color:var(--green-light)}
-.b-falta{background:var(--orange-sub);color:var(--orange-light)}
+.cc-badges{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.cc-badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;text-transform:uppercase;white-space:nowrap}
+.b-serv    {background:var(--blue-sub);color:var(--blue-light)}
+.b-avalado {background:var(--green-sub);color:var(--green-light)}
+.b-avfalta {background:var(--amber-sub);color:var(--amber-light)}
+.b-puede   {background:var(--teal-sub);color:var(--teal-light)}
+.b-falta   {background:var(--orange-sub);color:var(--orange-light)}
+.b-aval-ok {background:rgba(26,122,60,.12);color:var(--green-light);font-size:9px;border:1px solid rgba(26,122,60,.25)}
+
 .cc-miss{padding:7px 12px 10px 30px;border-top:1px solid var(--border)}
-.miss-tit{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:5px}
+.miss-tit{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
+.miss-tit.amber{color:var(--amber)}
+.miss-tit.orange{color:var(--orange)}
 .miss-items{display:flex;flex-wrap:wrap;gap:5px}
 .miss-item{display:flex;align-items:center;gap:4px;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:600}
 .mi-aval{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.2)}
@@ -183,28 +186,29 @@ body.light .tag-n{background:rgba(200,210,225,.3)}
 /* MATRIX */
 .mat-wrap{overflow:auto;flex:1}
 .mat-tbl{border-collapse:collapse;min-width:100%;font-size:11px}
-.mat-tbl th{background:var(--surface);padding:7px 5px;text-align:center;
-  font-family:var(--font-d);font-weight:700;font-size:10px;letter-spacing:.5px;
-  text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);
+.mat-tbl th{background:var(--surface);padding:7px 5px;text-align:center;font-family:var(--font-d);font-weight:700;font-size:10px;
+  letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);
   white-space:nowrap;position:sticky;top:0;z-index:5;cursor:pointer}
 .mat-tbl th:hover{color:var(--text)}
 .mat-tbl th.th-d{min-width:175px;text-align:left;padding-left:12px;position:sticky;left:0;z-index:10;background:var(--surface)}
 .mat-tbl td{border:1px solid var(--border);padding:5px 3px;text-align:center;vertical-align:middle}
 .mat-tbl td.td-d{text-align:left;padding-left:10px;background:var(--surface);position:sticky;
   left:0;z-index:2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:175px;cursor:pointer;font-size:12px}
-.mat-tbl tr:hover td{background:rgba(128,128,128,.06)}
+.mat-tbl tr:hover td{background:rgba(128,128,128,.05)}
 .mat-tbl tr:hover td.td-d{background:var(--surface2)}
-.c-serv{background:var(--blue-sub);color:var(--blue-light);font-weight:700;font-size:12px}
-.c-puede{background:var(--green-sub);color:var(--green-light);font-weight:700;font-size:12px}
-.c-falta{background:var(--orange-sub);color:var(--orange-light);font-weight:700;cursor:pointer;font-size:13px}
+/* Matrix cell colors - 5 estados */
+.c-serv   {background:var(--blue-sub);color:var(--blue-light);font-weight:700;font-size:11px}
+.c-avalado{background:var(--green-sub);color:var(--green-light);font-weight:700;font-size:11px}
+.c-avfalta{background:var(--amber-sub);color:var(--amber-light);font-weight:700;font-size:11px;cursor:pointer}
+.c-avfalta:hover{background:rgba(217,119,6,.28)}
+.c-puede  {background:var(--teal-sub);color:var(--teal-light);font-weight:700;font-size:11px}
+.c-falta  {background:var(--orange-sub);color:var(--orange-light);font-weight:700;cursor:pointer;font-size:13px}
 .c-falta:hover{background:rgba(234,88,12,.28)}
 
-/* PDF OVERLAY */
-.pdf-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;
-  align-items:center;justify-content:center}
+/* PDF MODAL */
+.pdf-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;align-items:center;justify-content:center}
 .pdf-overlay.show{display:flex}
-.pdf-modal{background:var(--surface);border:1px solid var(--border);border-radius:10px;
-  padding:24px;width:360px;max-width:90vw}
+.pdf-modal{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px;width:360px;max-width:90vw}
 .pdf-title{font-family:var(--font-d);font-weight:700;font-size:16px;margin-bottom:14px}
 .pdf-option{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--border);
   border-radius:7px;margin-bottom:8px;cursor:pointer;transition:all .15s}
@@ -213,74 +217,47 @@ body.light .tag-n{background:rgba(200,210,225,.3)}
 .pdf-option-text strong{font-size:13px;display:block;margin-bottom:2px}
 .pdf-option-text span{font-size:11px;color:var(--text-muted)}
 .pdf-close{background:var(--surface2);border:1px solid var(--border);color:var(--text-muted);
-  padding:8px 16px;border-radius:var(--r);cursor:pointer;font-family:var(--font-b);
-  font-size:12px;width:100%;margin-top:4px;transition:all .15s}
+  padding:8px 16px;border-radius:var(--r);cursor:pointer;font-family:var(--font-b);font-size:12px;width:100%;margin-top:4px}
 .pdf-close:hover{border-color:var(--text-muted);color:var(--text)}
 
-/* LOADING/EMPTY */
 .loading{display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:12px;color:var(--text-muted)}
 .spinner{width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--red);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;color:var(--text-dim);gap:8px}
 .err-box{background:rgba(196,30,36,.07);border:1px solid var(--red);border-radius:8px;padding:14px 16px;margin:16px;font-size:13px;color:#f87171;line-height:1.6}
 
+/* LEYENDA */
+.legend{display:flex;gap:12px;flex-wrap:wrap;padding:8px 16px;background:var(--surface2);border-bottom:1px solid var(--border);font-size:10px}
+.leg-item{display:flex;align-items:center;gap:5px;color:var(--text-muted)}
+.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
 @media(max-width:680px){
   .sidebar{width:100%;max-height:40vh;border-right:none;border-bottom:1px solid var(--border)}
   .main{flex-direction:column}
   .qv-grid{grid-template-columns:1fr 1fr}
   .hero-cc{min-width:80px;padding:7px 9px}
-  .hero-cc-lbl{font-size:10px}
   .last-upd{display:none}
 }
+@media print{.nav,.hero,.sidebar,.tabs,.alert-wrap,.pdf-overlay,.legend{display:none!important}.main{height:auto;flex-direction:column}.content{overflow:visible}.mat-wrap{overflow:visible}.mat-tbl th,.mat-tbl td.td-d{position:static}}
 ::-webkit-scrollbar{width:4px;height:4px}
 ::-webkit-scrollbar-track{background:var(--surface)}
 ::-webkit-scrollbar-thumb{background:#3a3f4e;border-radius:3px}
-
-/* PDF print */
-@media print{
-  .nav,.hero,.sidebar,.tabs,.alert-wrap,.pdf-overlay{display:none!important}
-  .main{height:auto;flex-direction:column}
-  .content{overflow:visible}
-  .mat-wrap{overflow:visible}
-  .mat-tbl th{position:static}
-  .mat-tbl td.td-d{position:static}
-}
 </style>
 </head>
 <body>
-<!-- PDF MODAL -->
 <div class="pdf-overlay" id="pdfOverlay">
   <div class="pdf-modal">
     <div class="pdf-title">📄 Exportar reporte</div>
-    <div class="pdf-option" id="pdfDisp">
-      <div class="pdf-option-icon">🟢</div>
-      <div class="pdf-option-text">
-        <strong>Disponibles para contrato</strong>
-        <span>Lista de quiénes pueden trabajar en el contrato seleccionado</span>
-      </div>
-    </div>
-    <div class="pdf-option" id="pdfAll">
-      <div class="pdf-option-icon">📊</div>
-      <div class="pdf-option-text">
-        <strong>Nómina completa</strong>
-        <span>Todos los conductores con su polivalencia</span>
-      </div>
-    </div>
-    <div class="pdf-option" id="pdfFalta">
-      <div class="pdf-option-icon">⚠️</div>
-      <div class="pdf-option-text">
-        <strong>Pendientes de habilitación</strong>
-        <span>Quiénes tienen requisitos faltantes en el contrato seleccionado</span>
-      </div>
-    </div>
+    <div class="pdf-option" id="pdfDisp"><div class="pdf-option-icon">🟢</div><div class="pdf-option-text"><strong>Disponibles para contrato</strong><span>Avalados + quienes cumplen requisitos</span></div></div>
+    <div class="pdf-option" id="pdfAll"><div class="pdf-option-icon">📊</div><div class="pdf-option-text"><strong>Nómina completa</strong><span>Todos los conductores con polivalencia</span></div></div>
+    <div class="pdf-option" id="pdfFalta"><div class="pdf-option-icon">⚠️</div><div class="pdf-option-text"><strong>Pendientes de habilitación</strong><span>Quienes tienen requisitos faltantes</span></div></div>
     <button class="pdf-close" id="pdfCloseBtn">Cancelar</button>
   </div>
 </div>
 
 <div id="app">
   <div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#111317;color:#8892a4;font-family:sans-serif;gap:14px;flex-direction:column">
-    <div class="spinner"></div>
-    <span style="font-size:13px">Conectando con Google Sheets…</span>
+    <div class="spinner"></div><span style="font-size:13px">Conectando con Google Sheets…</span>
   </div>
 </div>
 
@@ -293,14 +270,12 @@ const COMP_LABELS = ['Lic. CAT E1','Cargas Peligrosas','Manejo Defensivo','Carne
 const UNIT_LABELS = ['Chupa 9mts','Superchupa','Vactor','Piletero','Hidrogrúa','Capilar','Agua','Regador','Cisterna Líq.','Playo','Portacontenedor'];
 const AUTO_REFRESH_MS = 5 * 60 * 1000;
 
-let DATA=null, LOADING=true, ERR=null;
+let DATA=null,LOADING=true,ERR=null;
 let ST={selected:null,tab:'quick',search:'',filter:'all',ccFilter:null,zoneFilter:null,alert:null,lastUpd:null,darkMode:true};
-
-// Cargar preferencia de modo oscuro/claro
 if(localStorage.getItem('griff_mode')==='light'){ST.darkMode=false;document.body.classList.add('light');}
 
 // ════════════════════════════════════════════════════
-//  JSONP FETCH
+//  JSONP
 // ════════════════════════════════════════════════════
 function loadDataJsonp(){
   return new Promise((res,rej)=>{
@@ -309,7 +284,7 @@ function loadDataJsonp(){
     const s=document.createElement('script');
     s.src=`${BACKEND_URL}?action=getData&callback=${cb}`;
     const cleanup=()=>{delete window[cb];s.parentNode?.removeChild(s);};
-    s.onerror=()=>{cleanup();rej(new Error('No se pudo conectar. Verificá BACKEND_URL.'));};
+    s.onerror=()=>{cleanup();rej(new Error('No se pudo conectar.'));};
     const t=setTimeout(()=>{cleanup();rej(new Error('Tiempo agotado (20s).'));},20000);
     s.onload=()=>clearTimeout(t);
     document.head.appendChild(s);
@@ -330,24 +305,76 @@ async function loadData(){
 }
 
 // ════════════════════════════════════════════════════
-//  LÓGICA
+//  LÓGICA DE HABILITACIÓN — 5 estados
+//  serv     → EN SERVICIO (asignado a este contrato)
+//  avalado  → tiene aval + cumple todos los requisitos
+//  avfalta  → tiene aval PERO le faltan unidades o certs
+//  puede    → cumple todos los requisitos PERO no tiene aval
+//  falta    → no tiene aval + le faltan requisitos
 // ════════════════════════════════════════════════════
-function getStatus(d,ct){
-  if(d.contrato===ct.id) return {status:'serv',missing:[]};
-  const k=String(d.cuil),hasAval=DATA.avales[k]?.includes(ct.id);
-  const m=[];
-  if(!hasAval) m.push({tipo:'aval',label:'Aval / Habilitación'});
-  ct.comp_req.forEach((r,i)=>{if(r&&d.comps[i]<1) m.push({tipo:'comp',label:COMP_LABELS[i]});});
-  ct.unit_req.forEach((r,i)=>{if(r&&d.units[i]<1) m.push({tipo:'unit',label:UNIT_LABELS[i]});});
-  return m.length?{status:'falta',missing:m}:{status:'puede',missing:[]};
+function getStatus(d, ct) {
+  const k = String(d.cuil);
+  const hasAval = DATA.avales[k]?.includes(ct.id);
+
+  // Verificar certs y unidades (sin contar aval)
+  const missingReqs = [];
+  ct.comp_req.forEach((r,i) => { if(r && d.comps[i]<1) missingReqs.push({tipo:'comp', label:COMP_LABELS[i]}); });
+  ct.unit_req.forEach((r,i) => { if(r && d.units[i]<1) missingReqs.push({tipo:'unit', label:UNIT_LABELS[i]}); });
+
+  // EN SERVICIO — asignado a este contrato
+  if (d.contrato === ct.id) {
+    return { status:'serv', hasAval, missing:[] };
+  }
+
+  // AVALADO completo — tiene aval + cumple todo
+  if (hasAval && missingReqs.length === 0) {
+    return { status:'avalado', hasAval:true, missing:[] };
+  }
+
+  // AVALADO PARCIAL — tiene aval pero le faltan unidades/certs
+  if (hasAval && missingReqs.length > 0) {
+    return { status:'avfalta', hasAval:true, missing:missingReqs };
+  }
+
+  // PUEDE — cumple requisitos pero no tiene aval
+  if (!hasAval && missingReqs.length === 0) {
+    return { status:'puede', hasAval:false, missing:[{tipo:'aval', label:'Aval / Habilitación'}] };
+  }
+
+  // FALTA TODO — no tiene aval + faltan requisitos
+  return { status:'falta', hasAval:false, missing:[{tipo:'aval', label:'Aval / Habilitación'}, ...missingReqs] };
 }
 
 function statsFor(id){
-  if(!DATA||!id) return {serv:0,puede:0,falta:0};
-  const ct=DATA.contratos.find(c=>c.id===id);if(!ct) return {serv:0,puede:0,falta:0};
-  const r={serv:0,puede:0,falta:0};
+  if(!DATA||!id) return {serv:0,avalado:0,avfalta:0,puede:0,falta:0};
+  const ct=DATA.contratos.find(c=>c.id===id);if(!ct) return {serv:0,avalado:0,avfalta:0,puede:0,falta:0};
+  const r={serv:0,avalado:0,avfalta:0,puede:0,falta:0};
   DATA.conductores.forEach(d=>r[getStatus(d,ct).status]++);
   return r;
+}
+
+// Color y texto por estado
+function statusColor(s){
+  return s==='serv'?'var(--blue-light)':s==='avalado'?'var(--green-light)':
+    s==='avfalta'?'var(--amber-light)':s==='puede'?'var(--teal-light)':'var(--orange-light)';
+}
+function statusBadgeClass(s){
+  return 'b-'+s;
+}
+function statusLabel(s, hasAval){
+  if(s==='serv')    return hasAval ? '✔ EN SERVICIO · AVALADO' : '✔ EN SERVICIO';
+  if(s==='avalado') return '✔ AVALADO';
+  if(s==='avfalta') return '🔑 AVALADO · Falta requisitos';
+  if(s==='puede')   return '~ Cumple · Falta Aval';
+  return '⚠ FALTA';
+}
+function statusCardClass(s){
+  return s==='serv'?'s-serv':s==='avalado'?'s-avalado':s==='avfalta'?'s-avfalta':s==='puede'?'s-puede':'s-falta';
+}
+function missTit(s){
+  if(s==='avfalta') return '<div class="miss-tit amber">Tiene aval — le faltan para trabajar aquí:</div>';
+  if(s==='puede')   return '<div class="miss-tit" style="color:var(--teal)">Cumple requisitos — le falta:</div>';
+  return '<div class="miss-tit orange">Para trabajar aquí necesita:</div>';
 }
 
 const pc=p=>p>=70?'var(--green-light)':p>=40?'var(--amber-light)':'#f87171';
@@ -363,92 +390,75 @@ function filtered(){
   if(ST.search){const q=ST.search.toLowerCase();list=list.filter(d=>d.nombre.toLowerCase().includes(q)||String(d.cuil).includes(q)||d.zona.toLowerCase().includes(q));}
   if(ST.zoneFilter) list=list.filter(d=>d.zona===ST.zoneFilter);
   const ct=ST.ccFilter?DATA.contratos.find(c=>c.id===ST.ccFilter):null;
-  if(ct&&ST.filter!=='all') list=list.filter(d=>getStatus(d,ct).status===ST.filter);
+  if(ct&&ST.filter!=='all'){
+    list=list.filter(d=>{
+      const s=getStatus(d,ct).status;
+      if(ST.filter==='av') return s==='avalado';
+      if(ST.filter==='avfalta') return s==='avfalta';
+      if(ST.filter==='ok') return s==='puede';
+      if(ST.filter==='serv') return s==='serv';
+      if(ST.filter==='falta') return s==='falta';
+      return true;
+    });
+  }
   return list;
 }
 
-// ════════════════════════════════════════════════════
-//  MODO OSCURO / CLARO
-// ════════════════════════════════════════════════════
 function toggleMode(){
-  ST.darkMode=!ST.darkMode;
-  document.body.classList.toggle('light',!ST.darkMode);
-  localStorage.setItem('griff_mode',ST.darkMode?'dark':'light');
-  render();
+  ST.darkMode=!ST.darkMode;document.body.classList.toggle('light',!ST.darkMode);
+  localStorage.setItem('griff_mode',ST.darkMode?'dark':'light');render();
 }
 
-// ════════════════════════════════════════════════════
-//  EXPORTAR PDF
-// ════════════════════════════════════════════════════
-function showPdfModal(){
-  document.getElementById('pdfOverlay').classList.add('show');
-}
-function hidePdfModal(){
-  document.getElementById('pdfOverlay').classList.remove('show');
-}
+function showPdfModal(){document.getElementById('pdfOverlay').classList.add('show');}
+function hidePdfModal(){document.getElementById('pdfOverlay').classList.remove('show');}
 function exportPdf(tipo){
-  hidePdfModal();
-  if(!DATA){alert('Esperá que carguen los datos.');return;}
+  hidePdfModal();if(!DATA){alert('Esperá que carguen los datos.');return;}
   const ct=ST.ccFilter?DATA.contratos.find(c=>c.id===ST.ccFilter):null;
   const hoy=new Date().toLocaleDateString('es-AR');
-  let rows=[], titulo='';
-
+  let rows=[],titulo='';
   if(tipo==='disp'){
     if(!ct){alert('Seleccioná un contrato primero.');return;}
-    titulo=`Disponibles para ${ct.label} — ${hoy}`;
+    titulo=`Disponibles — ${ct.label} — ${hoy}`;
     rows=DATA.conductores
-      .filter(d=>['serv','puede'].includes(getStatus(d,ct).status))
-      .sort((a,b)=>{const sa=getStatus(a,ct).status,sb=getStatus(b,ct).status;
-        if(sa==='serv'&&sb!=='serv') return -1;if(sb==='serv'&&sa!=='serv') return 1;return b.pct-a.pct;})
-      .map(d=>{const s=getStatus(d,ct).status;
+      .filter(d=>['serv','avalado','avfalta','puede'].includes(getStatus(d,ct).status))
+      .sort((a,b)=>{
+        const ORDER={serv:0,avalado:1,avfalta:2,puede:3};
+        const sa=getStatus(a,ct).status,sb=getStatus(b,ct).status;
+        return (ORDER[sa]??9)-(ORDER[sb]??9)||b.pct-a.pct;
+      })
+      .map(d=>{const {status,hasAval}=getStatus(d,ct);
+        const lbl=status==='serv'?'En Servicio':status==='avalado'?'✔ Avalado':status==='avfalta'?'🔑 Avalado c/falta':'Cumple · Falta Aval';
+        const col=status==='serv'?'#1d4ed8':status==='avalado'?'#16a34a':status==='avfalta'?'#d97706':'#0891b2';
         return `<tr><td>${d.nombre}</td><td>${d.puesto}</td><td>${d.zona}</td>
-          <td style="color:${s==='serv'?'#1d4ed8':'#16a34a'};font-weight:700">
-            ${s==='serv'?'✔ En Servicio':'✔ Puede Afectar'}</td>
-          <td style="font-weight:700">${d.pct}%</td></tr>`;});
+          <td style="color:${col};font-weight:700">${lbl}</td><td>${d.pct}%</td></tr>`;});
   }else if(tipo==='falta'){
     if(!ct){alert('Seleccioná un contrato primero.');return;}
-    titulo=`Pendientes de habilitación — ${ct.label} — ${hoy}`;
-    rows=DATA.conductores
-      .filter(d=>getStatus(d,ct).status==='falta')
-      .map(d=>{const {missing}=getStatus(d,ct);
+    titulo=`Pendientes — ${ct.label} — ${hoy}`;
+    rows=DATA.conductores.filter(d=>['avfalta','puede','falta'].includes(getStatus(d,ct).status))
+      .map(d=>{const {status,missing}=getStatus(d,ct);
         return `<tr><td>${d.nombre}</td><td>${d.puesto}</td><td>${d.zona}</td>
-          <td style="color:#ea580c">${missing.map(m=>m.label).join(', ')}</td></tr>`;});
+          <td style="color:${status==='avfalta'?'#d97706':'#ea580c'}">${missing.map(m=>m.label).join(', ')}</td></tr>`;});
   }else{
-    titulo=`Nómina completa — Polivalencia — ${hoy}`;
+    titulo=`Nómina completa — ${hoy}`;
     rows=[...DATA.conductores].sort((a,b)=>b.pct-a.pct)
       .map(d=>`<tr><td>${d.nombre}</td><td>${d.puesto}</td><td>${d.zona}</td>
-        <td>${d.contrato}</td>
-        <td style="font-weight:700;color:${pc(d.pct)}">${d.pct}% ${pl(d.pct)}</td></tr>`);
+        <td>${d.contrato}</td><td style="font-weight:700;color:${pc(d.pct)}">${d.pct}% ${pl(d.pct)}</td></tr>`);
   }
-
   const win=window.open('','_blank');
-  win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8">
-  <title>${titulo}</title>
-  <style>
-    body{font-family:Arial,sans-serif;font-size:12px;padding:20px;color:#1a1a1a}
-    h1{font-size:16px;margin-bottom:4px;color:#C41E24}
-    h2{font-size:12px;color:#555;font-weight:normal;margin-bottom:16px}
-    table{border-collapse:collapse;width:100%}
-    th{background:#2D2D2D;color:#fff;padding:7px 10px;text-align:left;font-size:11px}
-    td{padding:6px 10px;border-bottom:1px solid #e5e7eb;font-size:11px}
-    tr:nth-child(even) td{background:#f9fafb}
-    .footer{margin-top:20px;font-size:10px;color:#999}
-  </style>
-  </head><body>
-  <h1>GRIFFOULIERE TRANSPORTES</h1>
-  <h2>${titulo}</h2>
-  <table>
-    <tr>${tipo==='all'?
-      '<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Contrato</th><th>Polivalencia</th>':
-      tipo==='falta'?
-      '<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Requisitos faltantes</th>':
-      '<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Estado</th><th>Polivalencia</th>'}
-    </tr>
-    ${rows.join('')}
-  </table>
-  <div class="footer">Generado el ${hoy} · ${rows.length} registros · Sistema de Habilitaciones Griffouliere</div>
-  <script>window.onload=()=>window.print();<\/script>
-  </body></html>`);
+  win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${titulo}</title>
+  <style>body{font-family:Arial,sans-serif;font-size:12px;padding:20px;color:#1a1a1a}
+  h1{font-size:16px;color:#C41E24;margin-bottom:4px}h2{font-size:12px;color:#555;font-weight:normal;margin-bottom:16px}
+  table{border-collapse:collapse;width:100%}th{background:#2D2D2D;color:#fff;padding:7px 10px;text-align:left;font-size:11px}
+  td{padding:6px 10px;border-bottom:1px solid #e5e7eb;font-size:11px}tr:nth-child(even) td{background:#f9fafb}
+  .footer{margin-top:20px;font-size:10px;color:#999}</style></head><body>
+  <h1>GRIFFOULIERE TRANSPORTES</h1><h2>${titulo}</h2>
+  <table><tr>${tipo==='all'?
+    '<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Contrato</th><th>Polivalencia</th>':
+    tipo==='falta'?'<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Requisitos faltantes</th>':
+    '<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Estado</th><th>Polivalencia</th>'}
+  </tr>${rows.join('')}</table>
+  <div class="footer">Generado ${hoy} · ${rows.length} registros · Griffouliere Habilitaciones</div>
+  <script>window.onload=()=>window.print();<\/script></body></html>`);
   win.document.close();
 }
 
@@ -466,8 +476,8 @@ function buildApp(){
     <span class="nav-badge">LOGÍSTICA</span>
     <div class="nav-right">
       ${ST.lastUpd?`<span class="last-upd">🔄 ${ST.lastUpd}</span>`:''}
-      <button class="btn" id="btnPdf" title="Exportar PDF">📄 PDF</button>
-      <button class="btn btn-icon" id="btnMode" title="${ST.darkMode?'Modo claro':'Modo oscuro'}">${ST.darkMode?'☀️':'🌙'}</button>
+      <button class="btn" id="btnPdf">📄 PDF</button>
+      <button class="btn btn-icon" id="btnMode">${ST.darkMode?'☀️':'🌙'}</button>
       <button class="btn" id="btnRef" ${LOADING?'disabled':''}>${LOADING?'⟳ Cargando…':'⟳ Actualizar'}</button>
     </div>
   </nav>
@@ -493,14 +503,22 @@ function buildApp(){
         return `<div class="hero-cc ${active?'active':''}" data-hcc="${ct.id}">
           <div class="hero-cc-lbl">${ct.label.split('·').pop().trim()}</div>
           <div class="hero-cc-nums">
-            <span class="ccn s" title="En servicio">${s.serv}</span>
-            <span class="ccn p" title="Puede trabajar">${s.puede}</span>
-            <span class="ccn f" title="Le falta algo">${s.falta}</span>
+            <span class="ccn av" title="Avalados: ${s.serv+s.avalado}">${s.serv+s.avalado}</span>
+            <span class="ccn ok" title="Cumple requisitos: ${s.avfalta+s.puede}">${s.avfalta+s.puede}</span>
+            <span class="ccn f" title="Le falta">${s.falta}</span>
           </div>
         </div>`;
-      }).join(''):'<div style="color:var(--text-muted);font-size:12px">Cargando contratos…</div>'}
+      }).join(''):'<div style="color:var(--text-muted);font-size:12px">Cargando…</div>'}
     </div>
   </div>
+
+  ${ST.ccFilter?`<div class="legend">
+    <div class="leg-item"><div class="leg-dot" style="background:var(--green-light)"></div> Avalado ✔</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--blue-light)"></div> En Servicio</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--amber-light)"></div> Avalado · Falta unidades/certs</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--teal-light)"></div> Cumple requisitos · Falta Aval</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--orange-light)"></div> Le falta todo</div>
+  </div>`:''}
 
   <div class="main">
     <div class="sidebar">
@@ -513,8 +531,9 @@ function buildApp(){
       </div>
       <div class="sb-filters">
         <div class="chip chip-all ${ST.filter==='all'?'on':''}" data-f="all">Todos</div>
-        <div class="chip chip-serv ${ST.filter==='serv'?'on':''}" data-f="serv">En servicio</div>
-        <div class="chip chip-puede ${ST.filter==='puede'?'on':''}" data-f="puede">Puede</div>
+        <div class="chip chip-serv ${ST.filter==='serv'?'on':''}" data-f="serv">Servicio</div>
+        <div class="chip chip-av ${ST.filter==='av'?'on':''}" data-f="av">Avalados</div>
+        <div class="chip chip-ok ${ST.filter==='ok'?'on':''}" data-f="ok">Cumple</div>
         <div class="chip chip-falta ${ST.filter==='falta'?'on':''}" data-f="falta">Le falta</div>
       </div>
       <div class="sb-zone">
@@ -532,9 +551,11 @@ function buildApp(){
             const ct2=ST.ccFilter?DATA.contratos.find(c=>c.id===ST.ccFilter):null;
             const st2=ct2?getStatus(d,ct2).status:null;
             let bg='';
-            if(st2==='serv') bg='background:rgba(29,78,216,.06)';
-            if(st2==='puede') bg='background:rgba(26,122,60,.06)';
-            if(st2==='falta') bg='background:rgba(234,88,12,.04)';
+            if(st2==='serv')    bg='background:rgba(29,78,216,.07)';
+            if(st2==='avalado') bg='background:rgba(26,122,60,.07)';
+            if(st2==='avfalta') bg='background:rgba(217,119,6,.07)';
+            if(st2==='puede')   bg='background:rgba(8,145,178,.07)';
+            if(st2==='falta')   bg='background:rgba(234,88,12,.04)';
             return `<div class="d-item ${sel&&sel.cuil===d.cuil?'sel':''}" data-cuil="${d.cuil}" style="${bg}">
               <div class="d-ava" style="background:${av.bg};color:${av.fg}">${ini(d.nombre)}</div>
               <div class="d-info">
@@ -549,15 +570,28 @@ function buildApp(){
 
     <div class="content">
       ${ST.ccFilter&&DATA?`<div class="stats">
-        <div class="stat"><div class="stat-v" style="color:var(--blue-light)">${stats.serv}</div><div class="stat-l">En Servicio</div></div>
-        <div class="stat"><div class="stat-v" style="color:var(--green-light)">${stats.puede}</div><div class="stat-l">Puede Trabajar</div></div>
-        <div class="stat"><div class="stat-v" style="color:var(--orange-light)">${stats.falta}</div><div class="stat-l">Le Falta Algo</div></div>
+        <div class="stat">
+          <div class="stat-v" style="color:var(--green-light)">${stats.serv+stats.avalado}</div>
+          <div class="stat-l">Avalados ✔</div>
+        </div>
+        <div class="stat">
+          <div class="stat-v" style="color:var(--amber-light)">${stats.avfalta}</div>
+          <div class="stat-l">Aval·Falta algo</div>
+        </div>
+        <div class="stat">
+          <div class="stat-v" style="color:var(--teal-light)">${stats.puede}</div>
+          <div class="stat-l">Cumple·Falta Aval</div>
+        </div>
+        <div class="stat">
+          <div class="stat-v" style="color:var(--orange-light)">${stats.falta}</div>
+          <div class="stat-l">Le falta todo</div>
+        </div>
         <div class="stat">
           <div>
             <div style="font-size:10px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase">Contrato</div>
-            <div style="font-size:13px;font-weight:600;margin-top:2px">${DATA.contratos.find(c=>c.id===ST.ccFilter)?.label}</div>
+            <div style="font-size:12px;font-weight:600;margin-top:2px">${DATA.contratos.find(c=>c.id===ST.ccFilter)?.label}</div>
           </div>
-          <button class="btn" id="btnClearF" style="background:var(--surface2);border-color:var(--border);color:var(--text-muted)">✕ Limpiar</button>
+          <button class="btn" id="btnClearF">✕</button>
         </div>
       </div>`:''}
 
@@ -577,23 +611,27 @@ function buildQuick(){
   if(!ST.ccFilter) return `<div class="quick-view"><div class="empty" style="height:320px">
     <span style="font-size:44px">☝️</span>
     <span style="font-family:var(--font-d);font-size:16px;color:var(--text-muted);letter-spacing:.5px">Seleccioná un contrato arriba</span>
-    <span style="font-size:11px;color:var(--text-dim);text-align:center;max-width:240px;line-height:1.6">
-      🔵 = en servicio · 🟢 = puede afectar · 🟠 = le falta algo
+    <span style="font-size:11px;color:var(--text-dim);text-align:center;max-width:240px;line-height:1.7">
+      🟢 Avalados · 🔵 En Servicio · 🟡 Aval+Falta algo · 🔵 Cumple·Sin Aval
     </span>
   </div></div>`;
   const ct=DATA.contratos.find(c=>c.id===ST.ccFilter);if(!ct) return '';
-  let disp=DATA.conductores.filter(d=>['puede','serv'].includes(getStatus(d,ct).status));
+  // Mostrar: serv, avalado, avfalta, puede (ordenados)
+  const ORDER={serv:0,avalado:1,avfalta:2,puede:3};
+  let disp=DATA.conductores
+    .filter(d=>['serv','avalado','avfalta','puede'].includes(getStatus(d,ct).status))
+    .map(d=>({...d,_st:getStatus(d,ct)}));
   if(ST.zoneFilter) disp=disp.filter(d=>d.zona===ST.zoneFilter);
-  disp.sort((a,b)=>{const sa=getStatus(a,ct).status,sb=getStatus(b,ct).status;
-    if(sa==='serv'&&sb!=='serv') return -1;if(sb==='serv'&&sa!=='serv') return 1;return b.pct-a.pct;});
+  disp.sort((a,b)=>(ORDER[a._st.status]??9)-(ORDER[b._st.status]??9)||b.pct-a.pct);
+
   return `<div class="quick-view">
     <div class="qv-title">${disp.length} disponible${disp.length!==1?'s':''} — ${ct.label}</div>
-    <div class="qv-sub">🔵 Ya en servicio · 🟢 Puede ser afectado formalmente · Ordenado por polivalencia</div>
+    <div class="qv-sub">🟢 Avalado ✔ · 🔵 En Servicio · 🟡 Avalado con falta · 🩵 Cumple sin aval</div>
     ${disp.length===0?`<div class="empty" style="height:200px">
       <span style="font-size:32px">😔</span>
       <span style="font-size:13px;color:var(--text-muted)">Sin disponibles${ST.zoneFilter?' en '+ST.zoneFilter:''}</span>
     </div>`:`<div class="qv-grid">
-      ${disp.map(d=>{const status=getStatus(d,ct).status,av=avS(d.pct);
+      ${disp.map(d=>{const {status,hasAval,missing}=d._st,av=avS(d.pct);
         return `<div class="qv-card ${status}" data-cuil="${d.cuil}">
           <div class="qv-top">
             <div class="qv-ava" style="background:${av.bg};color:${av.fg}">${ini(d.nombre)}</div>
@@ -601,7 +639,8 @@ function buildQuick(){
           </div>
           <div class="qv-name">${d.nombre}</div>
           <div class="qv-sub2">${d.puesto.replace('Conductor de ','C.')} · ${d.zona}</div>
-          <div class="qv-badge ${status}">${status==='serv'?'✔ En Servicio':'✔ Puede Afectar'}</div>
+          <div class="qv-badge ${status}">${statusLabel(status,hasAval)}</div>
+          ${status==='avfalta'?`<div class="qv-missing">Falta: ${missing.map(m=>m.label).join(', ')}</div>`:''}
         </div>`;}).join('')}
     </div>`}
   </div>`;
@@ -640,20 +679,19 @@ function buildDetail(sel){
     <div class="tags">${UNIT_LABELS.map((l,i)=>`<div class="tag ${sel.units[i]?'tag-y':'tag-n'}">${sel.units[i]?'✓':'✗'} ${l}</div>`).join('')}</div>
     <div class="sec-lbl" style="margin-top:16px">Estado por contrato</div>
     <div class="cc-grid">${DATA.contratos.map(ct=>{
-      const {status,missing}=getStatus(sel,ct);
-      const cls=`s-${status==='serv'?'serv':status==='puede'?'puede':'falta'}`;
-      const dot=status==='serv'?'var(--blue-light)':status==='puede'?'var(--green-light)':'var(--orange-light)';
-      const bCls=status==='serv'?'b-serv':status==='puede'?'b-puede':'b-falta';
-      const bTxt=status==='serv'?'✔ EN SERVICIO':status==='puede'?'✔ PUEDE':'⚠ FALTA';
-      return `<div class="cc-card ${cls}">
-        <div class="cc-hdr" ${status==='falta'?`data-alert="${sel.cuil}|${ct.id}"`:''}
-          style="${status==='falta'?'cursor:pointer':''}">
-          <div class="cc-dot" style="background:${dot}"></div>
+      const {status,hasAval,missing}=getStatus(sel,ct);
+      return `<div class="cc-card ${statusCardClass(status)}">
+        <div class="cc-hdr" ${(status==='falta'||status==='avfalta'||status==='puede')?`data-alert="${sel.cuil}|${ct.id}"`:''}
+          style="${(status==='falta'||status==='avfalta'||status==='puede')?'cursor:pointer':''}">
+          <div class="cc-dot" style="background:${statusColor(status)}"></div>
           <div class="cc-name">${ct.label}</div>
-          <div class="cc-badge ${bCls}">${bTxt}</div>
+          <div class="cc-badges">
+            <span class="cc-badge ${statusBadgeClass(status)}">${statusLabel(status,hasAval)}</span>
+            ${status==='serv'&&hasAval?'<span class="cc-badge b-aval-ok">🔑 AVAL OK</span>':''}
+          </div>
         </div>
-        ${status==='falta'?`<div class="cc-miss">
-          <div class="miss-tit">⛔ Para trabajar aquí necesita:</div>
+        ${missing.length>0?`<div class="cc-miss">
+          ${missTit(status)}
           <div class="miss-items">${missing.map(m=>`<div class="miss-item mi-${m.tipo}">${m.tipo==='aval'?'🔑':m.tipo==='comp'?'📋':'🚛'} ${m.label}</div>`).join('')}</div>
         </div>`:''}
       </div>`;
@@ -664,6 +702,8 @@ function buildDetail(sel){
 function buildMatrix(drivers){
   if(!DATA) return '';
   const MAX=80,shown=drivers.slice(0,MAX);
+  const cellClass={serv:'c-serv',avalado:'c-avalado',avfalta:'c-avfalta',puede:'c-puede',falta:'c-falta'};
+  const cellTxt={serv:'✔S',avalado:'✔AV',avfalta:'🔑⚠',puede:'~AV',falta:'⚠'};
   return `<div class="mat-wrap">
     <table class="mat-tbl">
       <thead><tr>
@@ -675,16 +715,23 @@ function buildMatrix(drivers){
         <td class="td-d" data-cuil="${d.cuil}" title="${d.nombre}">${d.nombre.length>23?d.nombre.slice(0,22)+'…':d.nombre}</td>
         ${DATA.contratos.map(ct=>{
           const {status,missing}=getStatus(d,ct);
-          if(status==='serv') return `<td class="c-serv">✔</td>`;
-          if(status==='puede') return `<td class="c-puede">✔</td>`;
+          const cls=cellClass[status]||'c-falta';
+          const txt=cellTxt[status]||'⚠';
+          const canAlert=status==='falta'||status==='avfalta'||status==='puede';
           const tip=missing.map(m=>(m.tipo==='aval'?'🔑':m.tipo==='comp'?'📋':'🚛')+' '+m.label).join('\n');
-          return `<td class="c-falta" data-alert="${d.cuil}|${ct.id}" title="${tip}">⚠</td>`;
+          return `<td class="${cls}" ${canAlert?`data-alert="${d.cuil}|${ct.id}"`:''} title="${tip||statusLabel(status,false)}">${txt}</td>`;
         }).join('')}
         <td style="color:${pc(d.pct)};font-weight:700">${d.pct}%</td>
       </tr>`).join('')}</tbody>
     </table>
-    ${drivers.length>MAX?`<div style="text-align:center;padding:12px;color:var(--text-muted);font-size:11px">
-      Mostrando ${MAX} de ${drivers.length} — usá el buscador para ver más</div>`:''}
+    ${drivers.length>MAX?`<div style="text-align:center;padding:12px;color:var(--text-muted);font-size:11px">Mostrando ${MAX} de ${drivers.length} — usá el buscador para ver más</div>`:''}
+    <div style="padding:10px 16px;background:var(--surface);border-top:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap;font-size:10px">
+      <span style="color:var(--green-light)">✔AV = Avalado</span>
+      <span style="color:var(--blue-light)">✔S = En Servicio</span>
+      <span style="color:var(--amber-light)">🔑⚠ = Aval+Falta algo</span>
+      <span style="color:var(--teal-light)">~AV = Cumple·Sin Aval</span>
+      <span style="color:var(--orange-light)">⚠ = Falta todo</span>
+    </div>
   </div>`;
 }
 
@@ -699,7 +746,6 @@ function bindEvents(){
   document.getElementById('pdfAll')?.addEventListener('click',()=>exportPdf('all'));
   document.getElementById('pdfFalta')?.addEventListener('click',()=>exportPdf('falta'));
   document.getElementById('pdfOverlay')?.addEventListener('click',e=>{if(e.target.id==='pdfOverlay') hidePdfModal();});
-
   const srch=document.getElementById('srch');
   if(srch) srch.addEventListener('input',e=>{
     ST.search=e.target.value;render();
@@ -721,7 +767,8 @@ function bindEvents(){
     const[cuil,ccId]=el.dataset.alert.split('|');
     const d=DATA.conductores.find(x=>String(x.cuil)===cuil),ct=DATA.contratos.find(c=>c.id===ccId);
     if(!d||!ct)return;
-    ST.alert={nombre:d.nombre,contrato:ct.label,missing:getStatus(d,ct).missing};render();
+    const{status,missing}=getStatus(d,ct);
+    ST.alert={nombre:d.nombre,contrato:ct.label,missing};render();
   }));
 }
 
