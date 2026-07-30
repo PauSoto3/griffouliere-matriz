@@ -914,74 +914,74 @@ function buildRanking(){
   function medal(pos){ return pos===0?'🥇':pos===1?'🥈':pos===2?'🥉':''; }
   function podiumClass(pos){ return pos===0?'podium-1':pos===1?'podium-2':'podium-3'; }
 
-  return \`<div class="ranking-view">
+  return `<div class="ranking-view">
     <div class="rank-header">
-      <div class="rank-title">🏆 \${titulo}</div>
+      <div class="rank-title">🏆 ${titulo}</div>
       <select class="rank-cc-sel" id="rankCCSel">
         <option value="">— Todos los contratos —</option>
-        \${DATA.contratos.map(c=>\`<option value="\${c.id}" \${ccSel===c.id?'selected':''}>\${c.label}</option>\`).join('')}
+        ${DATA.contratos.map(c=>`<option value="${c.id}" ${ccSel===c.id?'selected':''}>${c.label}</option>`).join('')}
       </select>
       <select class="rank-zone-sel" id="rankZoneSel">
         <option value="">📍 Todas las zonas</option>
-        \${zl.map(z=>\`<option value="\${z}" \${zoneSel===z?'selected':''}>\${z}</option>\`).join('')}
+        ${zl.map(z=>`<option value="${z}" ${zoneSel===z?'selected':''}>${z}</option>`).join('')}
       </select>
     </div>
-    <div style="font-size:11px;color:var(--text-muted);margin-bottom:14px">\${sub} · \${ranked.length} conductores</div>
+    <div style="font-size:11px;color:var(--text-muted);margin-bottom:14px">${sub} · ${ranked.length} conductores</div>
 
-    \${top3.length>=3?\`
+    ${top3.length>=3?`
     <div class="rank-podium">
-      \${[top3[1],top3[0],top3[2]].map((d,i)=>{
+      ${[top3[1],top3[0],top3[2]].map((d,i)=>{
         const realPos=i===0?1:i===1?0:2;
         const av=avS(d.pct);
-        return \`<div class="podium-item" data-cuil="\${d.cuil}">
-          <div class="podium-name">\${d.nombre.split(' ').slice(0,2).join(' ')}</div>
-          <div class="podium-pct" style="color:\${pc(d.pct)}">\${d.pct}%</div>
-          \${statusBadge(d)}
-          <div class="podium-block \${podiumClass(realPos)}">
-            <div class="podium-medal">\${medal(realPos)}</div>
+        return `<div class="podium-item" data-cuil="${d.cuil}">
+          <div class="podium-name">${d.nombre.split(' ').slice(0,2).join(' ')}</div>
+          <div class="podium-pct" style="color:${pc(d.pct)}">${d.pct}%</div>
+          ${statusBadge(d)}
+          <div class="podium-block ${podiumClass(realPos)}">
+            <div class="podium-medal">${medal(realPos)}</div>
           </div>
-          <div class="podium-sub">\${d.zona}</div>
-        </div>\`;
+          <div class="podium-sub">${d.zona}</div>
+        </div>`;
       }).join('')}
-    </div>\`:''}
+    </div>`:''}
 
     <table class="rank-table">
       <thead><tr>
         <th class="th-center" style="width:48px">#</th>
         <th style="width:44px"></th>
         <th>Conductor</th>
-        \${ct?'<th class="th-center">Estado</th>':''}
+        ${ct?'<th class="th-center">Estado</th>':''}
         <th class="th-center">Unidades</th>
         <th>Polivalencia</th>
       </tr></thead>
       <tbody>
-        \${ranked.map((d,i)=>{
+        ${ranked.map((d,i)=>{
           const av=avS(d.pct);
           const med=medal(i);
-          return \`<tr data-cuil="\${d.cuil}">
-            <td class="rank-medal">\${med||\`<span style="color:var(--text-dim);font-family:var(--font-d);font-size:13px">\${i+1}</span>\`}</td>
+          return `<tr data-cuil="${d.cuil}">
+            <td class="rank-medal">${med||`<span style="color:var(--text-dim);font-family:var(--font-d);font-size:13px">${i+1}</span>`}</td>
             <td class="rank-ava">
-              <div class="rank-ava-circle" style="background:\${av.bg};color:\${av.fg}">\${ini(d.nombre)}</div>
+              <div class="rank-ava-circle" style="background:${av.bg};color:${av.fg}">${ini(d.nombre)}</div>
             </td>
             <td class="rank-name-cell">
-              <div class="rank-name">\${d.nombre}</div>
-              <div class="rank-sub">\${d.puesto.replace('Conductor de ','C.')} · \${d.zona}</div>
+              <div class="rank-name">${d.nombre}</div>
+              <div class="rank-sub">${d.puesto.replace('Conductor de ','C.')} · ${d.zona}</div>
             </td>
-            \${ct?\`<td class="rank-status-cell">\${statusBadge(d)}</td>\`:''}
-            <td class="rank-units">\${d.score}/11</td>
+            ${ct?`<td class="rank-status-cell">${statusBadge(d)}</td>`:''}
+            <td class="rank-units">${d.score}/11</td>
             <td class="rank-bar-cell">
               <div class="rank-bar-wrap">
                 <div class="rank-bar-bg">
-                  <div class="rank-bar-fill" style="width:\${d.pct}%;background:\${pb(d.pct)}"></div>
+                  <div class="rank-bar-fill" style="width:${d.pct}%;background:${pb(d.pct)}"></div>
                 </div>
-                <div class="rank-pct" style="color:\${pc(d.pct)}">\${d.pct}%</div>
+                <div class="rank-pct" style="color:${pc(d.pct)}">${d.pct}%</div>
               </div>
             </td>
-          </tr>\`;
+          </tr>`;
         }).join('')}
       </tbody>
     </table>
-  </div>\`;
+  </div>`;
 }
 
 function bindEvents(){
