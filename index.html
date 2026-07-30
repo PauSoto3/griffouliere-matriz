@@ -876,113 +876,108 @@ function buildRanking(){
   const ccSel=ST.rankCC||'';
   const zoneSel=ST.rankZone||'';
 
-  // Filter drivers
   let list=DATA.conductores;
   if(zoneSel) list=list.filter(d=>d.zona===zoneSel);
-
-  // If CC selected, show only drivers relevant to that CC (en servicio or avalados)
-  let titulo='', sub='';
-  if(ccSel){
-    const ct=DATA.contratos.find(c=>c.id===ccSel);
-    if(ct){
-      // Rank all, highlight who is available for this CC
-      titulo=`Ranking de Polivalencia — ${ct.label}`;
-      sub='Ordenado por % de polivalencia · Click en un conductor para ver su detalle';
-    }
-  } else {
-    titulo='Ranking General de Polivalencia';
-    sub='Seleccioná un contrato para filtrar por CC · Click para ver detalle';
-  }
-
-  // Sort by pct descending
   const ranked=[...list].sort((a,b)=>b.pct-a.pct);
-  const top3=ranked.slice(0,3);
-  const rest=ranked.slice(3);
-
   const ct=ccSel?DATA.contratos.find(c=>c.id===ccSel):null;
+  const titulo=ct?'Ranking — '+ct.label:'Ranking General de Polivalencia';
 
   function statusBadge(d){
     if(!ct) return '';
-    const {status}=getStatus(d,ct);
-    if(status==='serv')    return '<span style="font-size:9px;padding:1px 5px;border-radius:10px;background:var(--blue-sub);color:var(--blue-light)">EN SERV.</span>';
-    if(status==='avalado') return '<span style="font-size:9px;padding:1px 5px;border-radius:10px;background:var(--green-sub);color:var(--green-light)">AVALADO</span>';
-    if(status==='avfalta') return '<span style="font-size:9px;padding:1px 5px;border-radius:10px;background:var(--amber-sub);color:var(--amber-light)">AV+FALTA</span>';
-    if(status==='puede')   return '<span style="font-size:9px;padding:1px 5px;border-radius:10px;background:var(--teal-sub);color:var(--teal-light)">SIN AVAL</span>';
-    return '<span style="font-size:9px;padding:1px 5px;border-radius:10px;background:var(--orange-sub);color:var(--orange-light)">FALTA</span>';
+    const s=getStatus(d,ct).status;
+    const map={
+      serv:'background:var(--blue-sub);color:var(--blue-light)',
+      avalado:'background:var(--green-sub);color:var(--green-light)',
+      avfalta:'background:var(--amber-sub);color:var(--amber-light)',
+      puede:'background:var(--teal-sub);color:var(--teal-light)',
+      falta:'background:var(--orange-sub);color:var(--orange-light)',
+    };
+    const lbl={serv:'EN SERV.',avalado:'AVALADO',avfalta:'AV+FALTA',puede:'SIN AVAL',falta:'FALTA'};
+    return '<span style="font-size:9px;padding:1px 6px;border-radius:10px;'+map[s]+'">'+lbl[s]+'</span>';
   }
 
-  function medal(pos){ return pos===0?'🥇':pos===1?'🥈':pos===2?'🥉':''; }
-  function podiumClass(pos){ return pos===0?'podium-1':pos===1?'podium-2':'podium-3'; }
+  // Podium (top 3)
+  let podiumHTML='';
+  if(ranked.length>=3){
+    const order=[ranked[1],ranked[0],ranked[2]];
+    const medals=['🥈','🥇','🥉'];
+    const heights=['65px','90px','50px'];
+    const colors=[
+      'linear-gradient(180deg,#C0C0C0,#9E9E9E)',
+      'linear-gradient(180deg,#FFD700,#FFA000)',
+      'linear-gradient(180deg,#CD7F32,#A0522D)',
+    ];
+    podiumHTML='<div class="rank-podium">';
+    order.forEach(function(d,i){
+      const av=avS(d.pct);
+      podiumHTML+='<div class="podium-item" data-cuil="'+d.cuil+'">'
+        +'<div class="podium-name">'+d.nombre.split(' ').slice(0,2).join(' ')+'</div>'
+        +'<div class="podium-pct" style="color:'+pc(d.pct)+'">'+d.pct+'%</div>'
+        +statusBadge(d)
+        +'<div style="width:100%;height:'+heights[i]+';border-radius:6px 6px 0 0;'
+        +'background:'+colors[i]+';display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px">'
+        +'<span style="font-size:28px">'+medals[i]+'</span></div>'
+        +'<div class="podium-sub">'+d.zona+'</div>'
+        +'</div>';
+    });
+    podiumHTML+='</div>';
+  }
 
-  return `<div class="ranking-view">
-    <div class="rank-header">
-      <div class="rank-title">🏆 ${titulo}</div>
-      <select class="rank-cc-sel" id="rankCCSel">
-        <option value="">— Todos los contratos —</option>
-        ${DATA.contratos.map(c=>`<option value="${c.id}" ${ccSel===c.id?'selected':''}>${c.label}</option>`).join('')}
-      </select>
-      <select class="rank-zone-sel" id="rankZoneSel">
-        <option value="">📍 Todas las zonas</option>
-        ${zl.map(z=>`<option value="${z}" ${zoneSel===z?'selected':''}>${z}</option>`).join('')}
-      </select>
-    </div>
-    <div style="font-size:11px;color:var(--text-muted);margin-bottom:14px">${sub} · ${ranked.length} conductores</div>
+  // CC options
+  let ccOpts='<option value="">— Todos los contratos —</option>';
+  DATA.contratos.forEach(function(c){
+    ccOpts+='<option value="'+c.id+'"'+(ccSel===c.id?' selected':'')+'>'+c.label+'</option>';
+  });
 
-    ${top3.length>=3?`
-    <div class="rank-podium">
-      ${[top3[1],top3[0],top3[2]].map((d,i)=>{
-        const realPos=i===0?1:i===1?0:2;
-        const av=avS(d.pct);
-        return `<div class="podium-item" data-cuil="${d.cuil}">
-          <div class="podium-name">${d.nombre.split(' ').slice(0,2).join(' ')}</div>
-          <div class="podium-pct" style="color:${pc(d.pct)}">${d.pct}%</div>
-          ${statusBadge(d)}
-          <div class="podium-block ${podiumClass(realPos)}">
-            <div class="podium-medal">${medal(realPos)}</div>
-          </div>
-          <div class="podium-sub">${d.zona}</div>
-        </div>`;
-      }).join('')}
-    </div>`:''}
+  // Zone options
+  let zOpts='<option value="">📍 Todas las zonas</option>';
+  zl.forEach(function(z){ zOpts+='<option value="'+z+'"'+(zoneSel===z?' selected':'')+'>'+z+'</option>'; });
 
-    <table class="rank-table">
-      <thead><tr>
-        <th class="th-center" style="width:48px">#</th>
-        <th style="width:44px"></th>
-        <th>Conductor</th>
-        ${ct?'<th class="th-center">Estado</th>':''}
-        <th class="th-center">Unidades</th>
-        <th>Polivalencia</th>
-      </tr></thead>
-      <tbody>
-        ${ranked.map((d,i)=>{
-          const av=avS(d.pct);
-          const med=medal(i);
-          return `<tr data-cuil="${d.cuil}">
-            <td class="rank-medal">${med||`<span style="color:var(--text-dim);font-family:var(--font-d);font-size:13px">${i+1}</span>`}</td>
-            <td class="rank-ava">
-              <div class="rank-ava-circle" style="background:${av.bg};color:${av.fg}">${ini(d.nombre)}</div>
-            </td>
-            <td class="rank-name-cell">
-              <div class="rank-name">${d.nombre}</div>
-              <div class="rank-sub">${d.puesto.replace('Conductor de ','C.')} · ${d.zona}</div>
-            </td>
-            ${ct?`<td class="rank-status-cell">${statusBadge(d)}</td>`:''}
-            <td class="rank-units">${d.score}/11</td>
-            <td class="rank-bar-cell">
-              <div class="rank-bar-wrap">
-                <div class="rank-bar-bg">
-                  <div class="rank-bar-fill" style="width:${d.pct}%;background:${pb(d.pct)}"></div>
-                </div>
-                <div class="rank-pct" style="color:${pc(d.pct)}">${d.pct}%</div>
-              </div>
-            </td>
-          </tr>`;
-        }).join('')}
-      </tbody>
-    </table>
-  </div>`;
+  // Status col header
+  const statusTH=ct?'<th class="th-center">Estado</th>':'';
+
+  // Table rows
+  let rows='';
+  ranked.forEach(function(d,i){
+    const av=avS(d.pct);
+    const medals=['🥇','🥈','🥉'];
+    const posCell=i<3
+      ?'<td class="rank-medal">'+medals[i]+'</td>'
+      :'<td class="rank-medal"><span style="color:var(--text-dim);font-family:var(--font-d);font-size:13px">'+(i+1)+'</span></td>';
+    const statusCell=ct?'<td class="rank-status-cell">'+statusBadge(d)+'</td>':'';
+    rows+='<tr data-cuil="'+d.cuil+'">'
+      +posCell
+      +'<td class="rank-ava"><div class="rank-ava-circle" style="background:'+av.bg+';color:'+av.fg+'">'+ini(d.nombre)+'</div></td>'
+      +'<td class="rank-name-cell"><div class="rank-name">'+d.nombre+'</div>'
+      +'<div class="rank-sub">'+d.puesto.replace('Conductor de ','C.')+' · '+d.zona+'</div></td>'
+      +statusCell
+      +'<td class="rank-units">'+d.score+'/11</td>'
+      +'<td class="rank-bar-cell"><div class="rank-bar-wrap">'
+      +'<div class="rank-bar-bg"><div class="rank-bar-fill" style="width:'+d.pct+'%;background:'+pb(d.pct)+'"></div></div>'
+      +'<div class="rank-pct" style="color:'+pc(d.pct)+'">'+d.pct+'%</div>'
+      +'</div></td>'
+      +'</tr>';
+  });
+
+  return '<div class="ranking-view">'
+    +'<div class="rank-header">'
+    +'<div class="rank-title">🏆 '+titulo+'</div>'
+    +'<select class="rank-cc-sel" id="rankCCSel">'+ccOpts+'</select>'
+    +'<select class="rank-zone-sel" id="rankZoneSel">'+zOpts+'</select>'
+    +'</div>'
+    +'<div style="font-size:11px;color:var(--text-muted);margin-bottom:14px">Click en un conductor para ver su detalle · '+ranked.length+' conductores</div>'
+    +podiumHTML
+    +'<table class="rank-table"><thead><tr>'
+    +'<th class="th-center" style="width:48px">#</th>'
+    +'<th style="width:44px"></th>'
+    +'<th>Conductor</th>'
+    +statusTH
+    +'<th class="th-center">Unidades</th>'
+    +'<th>Polivalencia</th>'
+    +'</tr></thead><tbody>'+rows+'</tbody></table>'
+    +'</div>';
 }
+
 
 function bindEvents(){
   document.getElementById('btnRef')?.addEventListener('click',loadData);
