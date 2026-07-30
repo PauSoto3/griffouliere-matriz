@@ -20,40 +20,31 @@
 body.light{--bg:#f0f2f5;--surface:#fff;--surface2:#f5f7fa;--border:#dde1ea;--text:#1a1d24;--text-muted:#5a6478;--text-dim:#9aa3b2;}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height:100vh;overflow-x:hidden;transition:background .2s,color .2s}
-
-.nav{background:var(--charcoal);border-bottom:3px solid var(--red);padding:0 16px;
-  display:flex;align-items:center;gap:10px;height:50px;position:sticky;top:0;z-index:200}
+.nav{background:var(--charcoal);border-bottom:3px solid var(--red);padding:0 16px;display:flex;align-items:center;gap:10px;height:50px;position:sticky;top:0;z-index:200}
 .nav-logo{font-family:var(--font-d);font-weight:800;font-size:17px;letter-spacing:2px;color:#fff;text-transform:uppercase}
 .nav-logo span{color:var(--red)}
 .nav-badge{background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:1px}
 .nav-right{margin-left:auto;display:flex;gap:6px;align-items:center}
 .last-upd{font-size:11px;color:rgba(255,255,255,.45)}
-.btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);
-  padding:5px 11px;border-radius:var(--r);cursor:pointer;font-size:11px;font-family:var(--font-b);transition:all .15s}
+.btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);padding:5px 11px;border-radius:var(--r);cursor:pointer;font-size:11px;font-family:var(--font-b);transition:all .15s}
 .btn:hover{background:rgba(255,255,255,.16);color:#fff}
 .btn:disabled{opacity:.4;cursor:not-allowed}
 .btn-icon{width:30px;height:30px;display:flex;align-items:center;justify-content:center;padding:0;font-size:15px}
-
 /* ALERT */
 .alert-wrap{display:none}.alert-wrap.show{display:block}
-.alert-box{background:rgba(234,88,12,.08);border:1px solid var(--orange);border-left:4px solid var(--orange);
-  padding:12px 16px;display:flex;align-items:flex-start;gap:12px;animation:slideIn .3s ease}
+.alert-box{background:rgba(234,88,12,.08);border:1px solid var(--orange);border-left:4px solid var(--orange);padding:12px 16px;display:flex;align-items:flex-start;gap:12px;animation:slideIn .3s ease}
 .alert-icon{font-size:20px;flex-shrink:0}
 .alert-body{flex:1}
 .alert-title{font-family:var(--font-d);font-weight:700;font-size:15px;color:var(--orange-light);margin-bottom:4px}
 .alert-detail{font-size:13px;color:var(--text-muted);line-height:1.7}
-.miss-tag{display:inline-flex;align-items:center;gap:4px;background:rgba(234,88,12,.18);
-  border:1px solid rgba(234,88,12,.35);color:var(--orange-light);padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;margin:2px 3px}
+.miss-tag{display:inline-flex;align-items:center;gap:4px;background:rgba(234,88,12,.18);border:1px solid rgba(234,88,12,.35);color:var(--orange-light);padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;margin:2px 3px}
 .alert-close{background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:20px;padding:0 4px}
 @keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-
 /* HERO */
 .hero{background:var(--surface);border-bottom:1px solid var(--border);padding:13px 16px}
 .hero-lbl{font-family:var(--font-d);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:9px}
 .hero-ccs{display:flex;gap:7px;flex-wrap:wrap}
-.hero-cc{display:flex;flex-direction:column;align-items:center;gap:5px;
-  background:var(--surface2);border:2px solid var(--border);border-radius:8px;
-  padding:9px 11px;cursor:pointer;transition:all .2s;min-width:95px}
+.hero-cc{display:flex;flex-direction:column;align-items:center;gap:5px;background:var(--surface2);border:2px solid var(--border);border-radius:8px;padding:9px 11px;cursor:pointer;transition:all .2s;min-width:95px}
 .hero-cc:hover{border-color:var(--text-muted);transform:translateY(-1px)}
 .hero-cc.active{border-color:var(--red);background:var(--red-light)}
 .hero-cc-lbl{font-family:var(--font-d);font-weight:700;font-size:11px;color:var(--text);text-align:center;line-height:1.3}
@@ -62,23 +53,21 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 .ccn.av{color:var(--green-light);background:var(--green-sub)}
 .ccn.ok{color:var(--teal-light);background:var(--teal-sub)}
 .ccn.f{color:var(--orange-light);background:var(--orange-sub)}
-
 /* LAYOUT */
 .main{display:flex;height:calc(100vh - 50px);overflow:hidden}
 .sidebar{width:260px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;flex-shrink:0}
 .sb-head{padding:10px 12px 9px;border-bottom:1px solid var(--border)}
 .sb-title{font-family:var(--font-d);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
 .search{position:relative}
-.search input{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);
-  padding:7px 10px 7px 30px;border-radius:var(--r);font-family:var(--font-b);font-size:13px;outline:none;transition:border-color .2s}
+.search input{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:7px 10px 7px 30px;border-radius:var(--r);font-family:var(--font-b);font-size:13px;outline:none;transition:border-color .2s}
 .search input:focus{border-color:var(--red)}
 .search-ico{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:var(--text-dim);font-size:13px}
 .sb-filters{display:flex;gap:4px;padding:6px 10px;border-bottom:1px solid var(--border);flex-wrap:wrap}
 .chip{padding:3px 8px;border-radius:20px;font-size:10px;font-weight:600;cursor:pointer;border:1px solid transparent;transition:all .15s}
 .chip-all{border-color:var(--text-dim);color:var(--text-muted)}.chip-all.on{background:var(--surface2);border-color:#888;color:var(--text)}
+.chip-serv{border-color:var(--blue);color:var(--blue-light)}.chip-serv.on{background:var(--blue-sub)}
 .chip-av{border-color:var(--green);color:var(--green-light)}.chip-av.on{background:var(--green-bg)}
 .chip-ok{border-color:var(--teal);color:var(--teal-light)}.chip-ok.on{background:rgba(8,145,178,.1)}
-.chip-serv{border-color:var(--blue);color:var(--blue-light)}.chip-serv.on{background:var(--blue-sub)}
 .chip-falta{border-color:var(--orange);color:var(--orange-light)}.chip-falta.on{background:var(--orange-bg)}
 .sb-zone{padding:5px 10px;border-bottom:1px solid var(--border)}
 .sb-zone select{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:5px 8px;border-radius:var(--r);font-family:var(--font-b);font-size:11px;outline:none}
@@ -92,7 +81,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 .d-name{font-size:11px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .d-sub{font-size:10px;color:var(--text-muted);margin-top:1px}
 .d-pct{font-family:var(--font-d);font-weight:800;font-size:13px;flex-shrink:0}
-
 /* CONTENT */
 .content{flex:1;display:flex;flex-direction:column;overflow:hidden}
 .stats{display:flex;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0}
@@ -101,10 +89,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 .stat-v{font-family:var(--font-d);font-weight:800;font-size:20px}
 .stat-l{font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-top:1px}
 .tabs{display:flex;background:var(--surface);border-bottom:1px solid var(--border);padding:0 14px;gap:2px;flex-shrink:0}
-.tab{padding:10px 12px 8px;font-family:var(--font-d);font-weight:600;font-size:12px;
-  letter-spacing:.5px;color:var(--text-muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;text-transform:uppercase}
+.tab{padding:10px 12px 8px;font-family:var(--font-d);font-weight:600;font-size:12px;letter-spacing:.5px;color:var(--text-muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;text-transform:uppercase}
 .tab:hover{color:var(--text)}.tab.on{color:var(--text);border-bottom-color:var(--red)}
-
+/* LEGEND */
+.legend{display:flex;gap:12px;flex-wrap:wrap;padding:6px 16px;background:var(--surface2);border-bottom:1px solid var(--border);font-size:10px;flex-shrink:0}
+.leg-item{display:flex;align-items:center;gap:5px;color:var(--text-muted)}
+.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 /* QUICK VIEW */
 .quick-view{flex:1;overflow-y:auto;padding:16px}
 .qv-title{font-family:var(--font-d);font-weight:800;font-size:18px;margin-bottom:4px}
@@ -113,7 +103,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 .qv-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px;cursor:pointer;transition:all .2s}
 .qv-card:hover{border-color:var(--text-muted);transform:translateY(-1px)}
 .qv-card.avalado{border-left:4px solid var(--green-light)}
-.qv-card.avalado_falta{border-left:4px solid var(--amber-light)}
+.qv-card.avalado_falta,.qv-card.avfalta{border-left:4px solid var(--amber-light)}
 .qv-card.puede{border-left:4px solid var(--teal-light)}
 .qv-card.serv{border-left:4px solid var(--blue-light)}
 .qv-top{display:flex;justify-content:space-between;margin-bottom:8px}
@@ -123,11 +113,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 .qv-sub2{font-size:10px;color:var(--text-muted);margin-top:2px}
 .qv-badge{display:inline-flex;align-items:center;gap:3px;margin-top:8px;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700}
 .qv-badge.avalado{background:var(--green-sub);color:var(--green-light)}
-.qv-badge.avalado_falta{background:var(--amber-sub);color:var(--amber-light)}
+.qv-badge.avfalta,.qv-badge.avalado_falta{background:var(--amber-sub);color:var(--amber-light)}
 .qv-badge.puede{background:var(--teal-sub);color:var(--teal-light)}
 .qv-badge.serv{background:var(--blue-sub);color:var(--blue-light)}
 .qv-missing{font-size:10px;color:var(--text-muted);margin-top:4px;line-height:1.4}
-
 /* DETAIL */
 .detail{flex:1;overflow-y:auto;padding:16px 18px}
 .d-hdr{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border)}
@@ -146,33 +135,24 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-b);min-height
 .tag-y{background:var(--green-sub);border-color:rgba(26,122,60,.35);color:var(--green-light)}
 .tag-n{background:rgba(30,34,44,.5);border-color:var(--border);color:var(--text-dim)}
 body.light .tag-n{background:rgba(200,210,225,.3)}
-
-/* CONTRACT CARDS - 5 estados */
 .cc-grid{display:flex;flex-direction:column;gap:5px;margin-top:5px}
 .cc-card{background:var(--surface);border:1px solid var(--border);border-radius:7px;overflow:hidden}
-/* EN SERVICIO */
-.cc-card.s-serv      {border-left:4px solid var(--blue-light)}
-/* AVALADO completo */
-.cc-card.s-avalado   {border-left:4px solid var(--green-light)}
-/* AVALADO pero faltan unidades/certs */
-.cc-card.s-avfalta   {border-left:4px solid var(--amber-light)}
-/* Cumple requisitos pero falta aval */
-.cc-card.s-puede     {border-left:4px solid var(--teal-light)}
-/* Falta todo */
-.cc-card.s-falta     {border-left:4px solid var(--orange-light)}
-
+.cc-card.s-serv{border-left:4px solid var(--blue-light)}
+.cc-card.s-avalado{border-left:4px solid var(--green-light)}
+.cc-card.s-avfalta{border-left:4px solid var(--amber-light)}
+.cc-card.s-puede{border-left:4px solid var(--teal-light)}
+.cc-card.s-falta{border-left:4px solid var(--orange-light)}
 .cc-hdr{padding:8px 12px;display:flex;align-items:center;gap:9px}
-.cc-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.cc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .cc-name{font-family:var(--font-d);font-weight:600;font-size:13px;flex:1}
 .cc-badges{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
 .cc-badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;text-transform:uppercase;white-space:nowrap}
-.b-serv    {background:var(--blue-sub);color:var(--blue-light)}
-.b-avalado {background:var(--green-sub);color:var(--green-light)}
-.b-avfalta {background:var(--amber-sub);color:var(--amber-light)}
-.b-puede   {background:var(--teal-sub);color:var(--teal-light)}
-.b-falta   {background:var(--orange-sub);color:var(--orange-light)}
-.b-aval-ok {background:rgba(26,122,60,.12);color:var(--green-light);font-size:9px;border:1px solid rgba(26,122,60,.25)}
-
+.b-serv{background:var(--blue-sub);color:var(--blue-light)}
+.b-avalado{background:var(--green-sub);color:var(--green-light)}
+.b-avfalta{background:var(--amber-sub);color:var(--amber-light)}
+.b-puede{background:var(--teal-sub);color:var(--teal-light)}
+.b-falta{background:var(--orange-sub);color:var(--orange-light)}
+.b-aval-ok{background:rgba(26,122,60,.12);color:var(--green-light);font-size:9px;border:1px solid rgba(26,122,60,.25)}
 .cc-miss{padding:7px 12px 10px 30px;border-top:1px solid var(--border)}
 .miss-tit{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
 .miss-tit.amber{color:var(--amber)}
@@ -182,157 +162,114 @@ body.light .tag-n{background:rgba(200,210,225,.3)}
 .mi-aval{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.2)}
 .mi-comp{background:rgba(251,191,36,.09);color:var(--amber-light);border:1px solid rgba(251,191,36,.2)}
 .mi-unit{background:var(--orange-sub);color:var(--orange-light);border:1px solid rgba(234,88,12,.2)}
-
 /* MATRIX */
 .mat-wrap{overflow:auto;flex:1}
 .mat-tbl{border-collapse:collapse;min-width:100%;font-size:11px}
-.mat-tbl th{background:var(--surface);padding:7px 5px;text-align:center;font-family:var(--font-d);font-weight:700;font-size:10px;
-  letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);
-  white-space:nowrap;position:sticky;top:0;z-index:5;cursor:pointer}
+.mat-tbl th{background:var(--surface);padding:7px 5px;text-align:center;font-family:var(--font-d);font-weight:700;font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);white-space:nowrap;position:sticky;top:0;z-index:5;cursor:pointer}
 .mat-tbl th:hover{color:var(--text)}
 .mat-tbl th.th-d{min-width:175px;text-align:left;padding-left:12px;position:sticky;left:0;z-index:10;background:var(--surface)}
 .mat-tbl td{border:1px solid var(--border);padding:5px 3px;text-align:center;vertical-align:middle}
-.mat-tbl td.td-d{text-align:left;padding-left:10px;background:var(--surface);position:sticky;
-  left:0;z-index:2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:175px;cursor:pointer;font-size:12px}
+.mat-tbl td.td-d{text-align:left;padding-left:10px;background:var(--surface);position:sticky;left:0;z-index:2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:175px;cursor:pointer;font-size:12px}
 .mat-tbl tr:hover td{background:rgba(128,128,128,.05)}
 .mat-tbl tr:hover td.td-d{background:var(--surface2)}
-/* Matrix cell colors - 5 estados */
-.c-serv   {background:var(--blue-sub);color:var(--blue-light);font-weight:700;font-size:11px}
+.c-serv{background:var(--blue-sub);color:var(--blue-light);font-weight:700;font-size:11px}
 .c-avalado{background:var(--green-sub);color:var(--green-light);font-weight:700;font-size:11px}
 .c-avfalta{background:var(--amber-sub);color:var(--amber-light);font-weight:700;font-size:11px;cursor:pointer}
 .c-avfalta:hover{background:rgba(217,119,6,.28)}
-.c-puede  {background:var(--teal-sub);color:var(--teal-light);font-weight:700;font-size:11px}
-.c-falta  {background:var(--orange-sub);color:var(--orange-light);font-weight:700;cursor:pointer;font-size:13px}
+.c-puede{background:var(--teal-sub);color:var(--teal-light);font-weight:700;font-size:11px}
+.c-falta{background:var(--orange-sub);color:var(--orange-light);font-weight:700;cursor:pointer;font-size:13px}
 .c-falta:hover{background:rgba(234,88,12,.28)}
-
-/* PDF MODAL */
+/* RANKING */
+.rank-view{flex:1;overflow-y:auto;padding:16px}
+.rank-hdr{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.rank-title{font-family:var(--font-d);font-weight:800;font-size:18px}
+.rank-sel{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:var(--r);font-family:var(--font-b);font-size:12px;outline:none;min-width:180px}
+.rank-sel:focus{border-color:var(--red)}
+.podium{display:flex;justify-content:center;align-items:flex-end;gap:6px;margin-bottom:18px;padding:14px;background:var(--surface);border-radius:10px;border:1px solid var(--border)}
+.pod-item{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;max-width:150px;cursor:pointer}
+.pod-item:hover .pod-name{color:var(--text)}
+.pod-block{width:100%;border-radius:6px 6px 0 0;display:flex;align-items:center;justify-content:center}
+.pod-1{height:80px;background:linear-gradient(180deg,#FFD700,#FFA000)}
+.pod-2{height:58px;background:linear-gradient(180deg,#C0C0C0,#9E9E9E)}
+.pod-3{height:44px;background:linear-gradient(180deg,#CD7F32,#A0522D)}
+.pod-medal{font-size:24px}
+.pod-name{font-family:var(--font-d);font-weight:700;font-size:12px;text-align:center;line-height:1.2;color:var(--text-muted);transition:color .15s}
+.pod-pct{font-family:var(--font-d);font-weight:800;font-size:15px}
+.pod-sub{font-size:10px;color:var(--text-muted);text-align:center}
+.rank-tbl{width:100%;border-collapse:collapse}
+.rank-tbl th{background:var(--surface);padding:9px 10px;text-align:left;font-family:var(--font-d);font-weight:700;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);border-bottom:2px solid var(--border);position:sticky;top:0;z-index:5}
+.rank-tbl th.tc{text-align:center}
+.rank-tbl tr{border-bottom:1px solid var(--border);cursor:pointer;transition:background .1s}
+.rank-tbl tr:hover td{background:var(--surface2)}
+.rank-tbl td{padding:9px 10px;vertical-align:middle}
+.rank-pos{font-family:var(--font-d);font-weight:800;font-size:15px;text-align:center;width:44px}
+.rank-ava-cell{width:40px;padding:6px 0 6px 10px}
+.rank-ava-c{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:700;font-size:12px}
+.rank-name{font-size:13px;font-weight:600}
+.rank-sub{font-size:10px;color:var(--text-muted);margin-top:1px}
+.rank-bar-cell{width:160px}
+.rank-bar-wrap{display:flex;align-items:center;gap:6px}
+.rank-bar-bg{flex:1;height:7px;background:var(--surface2);border-radius:4px;overflow:hidden}
+.rank-bar-fill{height:100%;border-radius:4px}
+.rank-pct{font-family:var(--font-d);font-weight:800;font-size:14px;min-width:38px;text-align:right}
+/* PDF */
 .pdf-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;align-items:center;justify-content:center}
 .pdf-overlay.show{display:flex}
 .pdf-modal{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px;width:360px;max-width:90vw}
 .pdf-title{font-family:var(--font-d);font-weight:700;font-size:16px;margin-bottom:14px}
-.pdf-option{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--border);
-  border-radius:7px;margin-bottom:8px;cursor:pointer;transition:all .15s}
-.pdf-option:hover{border-color:var(--red);background:var(--red-light)}
-.pdf-option-icon{font-size:22px;flex-shrink:0}
-.pdf-option-text strong{font-size:13px;display:block;margin-bottom:2px}
-.pdf-option-text span{font-size:11px;color:var(--text-muted)}
-.pdf-close{background:var(--surface2);border:1px solid var(--border);color:var(--text-muted);
-  padding:8px 16px;border-radius:var(--r);cursor:pointer;font-family:var(--font-b);font-size:12px;width:100%;margin-top:4px}
-.pdf-close:hover{border-color:var(--text-muted);color:var(--text)}
-
+.pdf-opt{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--border);border-radius:7px;margin-bottom:8px;cursor:pointer;transition:all .15s}
+.pdf-opt:hover{border-color:var(--red);background:var(--red-light)}
+.pdf-opt-icon{font-size:22px;flex-shrink:0}
+.pdf-opt-text strong{font-size:13px;display:block;margin-bottom:2px}
+.pdf-opt-text span{font-size:11px;color:var(--text-muted)}
+.pdf-close-btn{background:var(--surface2);border:1px solid var(--border);color:var(--text-muted);padding:8px 16px;border-radius:var(--r);cursor:pointer;font-family:var(--font-b);font-size:12px;width:100%;margin-top:4px}
+/* MISC */
 .loading{display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:12px;color:var(--text-muted)}
 .spinner{width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--red);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;color:var(--text-dim);gap:8px}
 .err-box{background:rgba(196,30,36,.07);border:1px solid var(--red);border-radius:8px;padding:14px 16px;margin:16px;font-size:13px;color:#f87171;line-height:1.6}
-
-/* LEYENDA */
-.legend{display:flex;gap:12px;flex-wrap:wrap;padding:8px 16px;background:var(--surface2);border-bottom:1px solid var(--border);font-size:10px}
-.leg-item{display:flex;align-items:center;gap:5px;color:var(--text-muted)}
-.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-
-@media(max-width:680px){
-  .sidebar{width:100%;max-height:40vh;border-right:none;border-bottom:1px solid var(--border)}
-  .main{flex-direction:column}
-  .qv-grid{grid-template-columns:1fr 1fr}
-  .hero-cc{min-width:80px;padding:7px 9px}
-  .last-upd{display:none}
-}
+@media(max-width:680px){.sidebar{width:100%;max-height:40vh;border-right:none;border-bottom:1px solid var(--border)}.main{flex-direction:column}.qv-grid{grid-template-columns:1fr 1fr}.hero-cc{min-width:80px;padding:7px 9px}.last-upd{display:none}}
 @media print{.nav,.hero,.sidebar,.tabs,.alert-wrap,.pdf-overlay,.legend{display:none!important}.main{height:auto;flex-direction:column}.content{overflow:visible}.mat-wrap{overflow:visible}.mat-tbl th,.mat-tbl td.td-d{position:static}}
 ::-webkit-scrollbar{width:4px;height:4px}
 ::-webkit-scrollbar-track{background:var(--surface)}
 ::-webkit-scrollbar-thumb{background:#3a3f4e;border-radius:3px}
-
-/* ── RANKING ── */
-.ranking-view{flex:1;overflow-y:auto;padding:16px}
-.rank-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
-.rank-title{font-family:var(--font-d);font-weight:800;font-size:18px}
-.rank-cc-sel{background:var(--surface2);border:1px solid var(--border);color:var(--text);
-  padding:6px 10px;border-radius:var(--r);font-family:var(--font-b);font-size:12px;outline:none;min-width:200px}
-.rank-cc-sel:focus{border-color:var(--red)}
-.rank-zone-sel{background:var(--surface2);border:1px solid var(--border);color:var(--text);
-  padding:6px 10px;border-radius:var(--r);font-family:var(--font-b);font-size:12px;outline:none}
-.rank-table{width:100%;border-collapse:collapse}
-.rank-table th{background:var(--surface);padding:9px 12px;text-align:left;
-  font-family:var(--font-d);font-weight:700;font-size:11px;letter-spacing:1px;
-  text-transform:uppercase;color:var(--text-muted);border-bottom:2px solid var(--border);
-  position:sticky;top:0;z-index:5}
-.rank-table th.th-center{text-align:center}
-.rank-table tr{border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s}
-.rank-table tr:hover td{background:var(--surface2)}
-.rank-pos{font-family:var(--font-d);font-weight:800;font-size:16px;text-align:center;
-  width:48px;padding:10px 8px}
-.rank-medal{font-size:20px;text-align:center;padding:10px 8px;width:48px}
-.rank-ava{padding:8px 0 8px 12px;width:44px}
-.rank-ava-circle{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-family:var(--font-d);font-weight:700;font-size:13px}
-.rank-name-cell{padding:10px 12px}
-.rank-name{font-size:13px;font-weight:600;color:var(--text)}
-.rank-sub{font-size:10px;color:var(--text-muted);margin-top:2px}
-.rank-status-cell{padding:10px 12px;text-align:center}
-.rank-bar-cell{padding:10px 16px;width:180px}
-.rank-bar-wrap{display:flex;align-items:center;gap:8px}
-.rank-bar-bg{flex:1;height:8px;background:var(--surface2);border-radius:4px;overflow:hidden}
-.rank-bar-fill{height:100%;border-radius:4px}
-.rank-pct{font-family:var(--font-d);font-weight:800;font-size:14px;min-width:40px;text-align:right}
-.rank-units{font-family:var(--font-d);font-size:11px;color:var(--text-muted);text-align:center;padding:10px 8px}
-.rank-podium{display:flex;justify-content:center;align-items:flex-end;gap:8px;
-  margin-bottom:20px;padding:16px;background:var(--surface);border-radius:10px;border:1px solid var(--border)}
-.podium-item{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;max-width:160px;cursor:pointer}
-.podium-block{width:100%;border-radius:6px 6px 0 0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px}
-.podium-1{height:90px;background:linear-gradient(180deg,#FFD700,#FFA000)}
-.podium-2{height:65px;background:linear-gradient(180deg,#C0C0C0,#9E9E9E)}
-.podium-3{height:50px;background:linear-gradient(180deg,#CD7F32,#A0522D)}
-.podium-medal{font-size:28px}
-.podium-name{font-family:var(--font-d);font-weight:700;font-size:12px;text-align:center;line-height:1.3}
-.podium-pct{font-family:var(--font-d);font-weight:800;font-size:16px}
-.podium-sub{font-size:10px;color:var(--text-muted);text-align:center}
-
 </style>
 </head>
 <body>
 <div class="pdf-overlay" id="pdfOverlay">
   <div class="pdf-modal">
     <div class="pdf-title">📄 Exportar reporte</div>
-    <div class="pdf-option" id="pdfDisp"><div class="pdf-option-icon">🟢</div><div class="pdf-option-text"><strong>Disponibles para contrato</strong><span>Avalados + quienes cumplen requisitos</span></div></div>
-    <div class="pdf-option" id="pdfAll"><div class="pdf-option-icon">📊</div><div class="pdf-option-text"><strong>Nómina completa</strong><span>Todos los conductores con polivalencia</span></div></div>
-    <div class="pdf-option" id="pdfFalta"><div class="pdf-option-icon">⚠️</div><div class="pdf-option-text"><strong>Pendientes de habilitación</strong><span>Quienes tienen requisitos faltantes</span></div></div>
-    <button class="pdf-close" id="pdfCloseBtn">Cancelar</button>
+    <div class="pdf-opt" id="pdfDisp"><div class="pdf-opt-icon">🟢</div><div class="pdf-opt-text"><strong>Disponibles para contrato</strong><span>Avalados y quienes cumplen requisitos</span></div></div>
+    <div class="pdf-opt" id="pdfAll"><div class="pdf-opt-icon">📊</div><div class="pdf-opt-text"><strong>Nómina completa</strong><span>Todos con polivalencia</span></div></div>
+    <div class="pdf-opt" id="pdfFalta"><div class="pdf-opt-icon">⚠️</div><div class="pdf-opt-text"><strong>Pendientes de habilitación</strong><span>Quienes tienen requisitos faltantes</span></div></div>
+    <button class="pdf-close-btn" id="pdfCloseBtn">Cancelar</button>
   </div>
 </div>
-
-<div id="app">
-  <div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#111317;color:#8892a4;font-family:sans-serif;gap:14px;flex-direction:column">
-    <div class="spinner"></div><span style="font-size:13px">Conectando con Google Sheets…</span>
-  </div>
-</div>
-
+<div id="app"><div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#111317;color:#8892a4;font-family:sans-serif;gap:14px;flex-direction:column"><div class="spinner"></div><span style="font-size:13px">Conectando con Google Sheets…</span></div></div>
 <script>
-// ════════════════════════════════════════════════════
-//  CONFIGURACIÓN
-// ════════════════════════════════════════════════════
+// ── CONFIG ──────────────────────────────────────────────────────────
 const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbyCc6DzJY9ks_OHthl0BjeduMUJPq6Oxi20DqalLP7UhhISV7AOiv1VAvi6ppsjwvA/exec';
 const COMP_LABELS = ['Lic. CAT E1','Cargas Peligrosas','Manejo Defensivo','Carnet Hidrogrúa'];
 const UNIT_LABELS = ['Chupa 9mts','Superchupa','Vactor','Piletero','Hidrogrúa','Capilar','Agua','Regador','Cisterna Líq.','Playo','Portacontenedor'];
-const AUTO_REFRESH_MS = 5 * 60 * 1000;
+const AUTO_REFRESH_MS = 5*60*1000;
 
 let DATA=null,LOADING=true,ERR=null;
-let ST={selected:null,tab:'quick',search:'',filter:'all',ccFilter:null,zoneFilter:null,alert:null,lastUpd:null,darkMode:true,rankCC:'',rankZone:''};
+let ST={selected:null,tab:'quick',search:'',filter:'all',ccFilter:null,zoneFilter:null,
+        alert:null,lastUpd:null,darkMode:true,rankCC:'',rankZone:''};
 if(localStorage.getItem('griff_mode')==='light'){ST.darkMode=false;document.body.classList.add('light');}
 
-// ════════════════════════════════════════════════════
-//  JSONP
-// ════════════════════════════════════════════════════
+// ── JSONP ───────────────────────────────────────────────────────────
 function loadDataJsonp(){
-  return new Promise((res,rej)=>{
-    const cb='_griff_'+Date.now();
-    window[cb]=d=>{cleanup();d?.error?rej(new Error(d.message)):res(d);};
-    const s=document.createElement('script');
-    s.src=`${BACKEND_URL}?action=getData&callback=${cb}`;
-    const cleanup=()=>{delete window[cb];s.parentNode?.removeChild(s);};
-    s.onerror=()=>{cleanup();rej(new Error('No se pudo conectar.'));};
-    const t=setTimeout(()=>{cleanup();rej(new Error('Tiempo agotado (20s).'));},20000);
-    s.onload=()=>clearTimeout(t);
+  return new Promise(function(res,rej){
+    var cb='_griff_'+Date.now();
+    window[cb]=function(d){cleanup();d&&d.error?rej(new Error(d.message)):res(d);};
+    var s=document.createElement('script');
+    s.src=BACKEND_URL+'?action=getData&callback='+cb;
+    var cleanup=function(){delete window[cb];s.parentNode&&s.parentNode.removeChild(s);};
+    s.onerror=function(){cleanup();rej(new Error('No se pudo conectar.'));};
+    var t=setTimeout(function(){cleanup();rej(new Error('Tiempo agotado (20s).'));},20000);
+    s.onload=function(){clearTimeout(t);};
     document.head.appendChild(s);
   });
 }
@@ -340,704 +277,555 @@ function loadDataJsonp(){
 async function loadData(){
   LOADING=true;ERR=null;render();
   try{
-    if(!BACKEND_URL||BACKEND_URL==='TU_URL_AQUI') throw new Error('Configurar BACKEND_URL con la URL de Apps Script.');
-    const r=await loadDataJsonp();
-    if(!r.conductores?.length) throw new Error('Sin conductores. Verificá SS_ID en Code.gs.');
-    DATA={conductores:r.conductores,contratos:r.contratos?.length?r.contratos:FALLBACK,avales:r.avales||{}};
+    if(!BACKEND_URL||BACKEND_URL==='TU_URL_AQUI') throw new Error('Configurar BACKEND_URL.');
+    var r=await loadDataJsonp();
+    if(!r||!r.conductores||!r.conductores.length) throw new Error('Sin conductores. Verificá SS_ID en Code.gs.');
+    DATA={conductores:r.conductores,contratos:r.contratos&&r.contratos.length?r.contratos:FALLBACK,avales:r.avales||{}};
     ST.lastUpd=new Date().toLocaleTimeString('es-AR');
     if(!ST.selected&&DATA.conductores.length) ST.selected=DATA.conductores[0].cuil;
   }catch(e){ERR=e.message;}
   LOADING=false;render();
 }
 
-// ════════════════════════════════════════════════════
-//  LÓGICA DE HABILITACIÓN — 5 estados
-//  serv     → EN SERVICIO (asignado a este contrato)
-//  avalado  → tiene aval + cumple todos los requisitos
-//  avfalta  → tiene aval PERO le faltan unidades o certs
-//  puede    → cumple todos los requisitos PERO no tiene aval
-//  falta    → no tiene aval + le faltan requisitos
-// ════════════════════════════════════════════════════
-// Obtener info del aval (puede ser objeto {cc,vence,dias} o string legacy)
-function getAvalInfo(k, ccId) {
-  const lista = DATA.avales[k];
-  if (!lista) return null;
-  // Nuevo formato: array de objetos
-  if (lista[0] && typeof lista[0] === 'object') {
-    return lista.find(a => a.cc === ccId) || null;
-  }
-  // Legacy: array de strings
-  return lista.includes(ccId) ? { cc: ccId, vence: null, dias: null } : null;
+// ── LOGIC ───────────────────────────────────────────────────────────
+function getAvalInfo(cuil,ccId){
+  var lista=DATA.avales[String(cuil)];
+  if(!lista) return null;
+  if(lista.length&&typeof lista[0]==='object') return lista.find(function(a){return a.cc===ccId;})||null;
+  return lista.indexOf(ccId)>=0?{cc:ccId,vence:null,dias:null}:null;
 }
 
-function getStatus(d, ct) {
-  const k = String(d.cuil);
-  const avalInfo = getAvalInfo(k, ct.id);
-  const hasAval  = !!avalInfo;
-
-  // Verificar si el aval está vencido
-  const avalVencido = hasAval && avalInfo.dias !== null && avalInfo.dias < 0;
-  const avalProximo = hasAval && avalInfo.dias !== null && avalInfo.dias >= 0 && avalInfo.dias <= 30;
-
-  // Verificar certs y unidades
-  const missingReqs = [];
-  ct.comp_req.forEach((r,i) => { if(r && d.comps[i]<1) missingReqs.push({tipo:'comp', label:COMP_LABELS[i]}); });
-  ct.unit_req.forEach((r,i) => { if(r && d.units[i]<1) missingReqs.push({tipo:'unit', label:UNIT_LABELS[i]}); });
-
-  // EN SERVICIO
-  if (d.contrato === ct.id) {
-    return { status:'serv', hasAval, avalInfo, avalVencido, avalProximo, missing:[] };
-  }
-
-  // Si el aval está vencido — tratarlo como sin aval válido
-  if (avalVencido) {
-    const allMissing = [{tipo:'aval', label:'Aval VENCIDO el '+avalInfo.vence}, ...missingReqs];
-    return { status:'falta', hasAval:false, avalInfo, avalVencido:true, avalProximo:false, missing:allMissing, vencido:true };
-  }
-
-  // AVALADO completo
-  if (hasAval && missingReqs.length === 0) {
-    return { status:'avalado', hasAval:true, avalInfo, avalVencido:false, avalProximo, missing:[] };
-  }
-
-  // AVALADO PARCIAL — tiene aval pero faltan unidades/certs
-  if (hasAval && missingReqs.length > 0) {
-    return { status:'avfalta', hasAval:true, avalInfo, avalVencido:false, avalProximo, missing:missingReqs };
-  }
-
-  // PUEDE — cumple requisitos pero no tiene aval
-  if (!hasAval && missingReqs.length === 0) {
-    return { status:'puede', hasAval:false, avalInfo:null, avalVencido:false, avalProximo:false, missing:[{tipo:'aval', label:'Aval / Habilitación'}] };
-  }
-
-  // FALTA TODO
-  return { status:'falta', hasAval:false, avalInfo:null, avalVencido:false, avalProximo:false,
-    missing:[{tipo:'aval', label:'Aval / Habilitación'}, ...missingReqs] };
+function getStatus(d,ct){
+  var k=String(d.cuil);
+  var avalInfo=getAvalInfo(k,ct.id);
+  var hasAval=!!avalInfo;
+  var avalVencido=hasAval&&avalInfo.dias!==null&&avalInfo.dias<0;
+  var avalProximo=hasAval&&avalInfo.dias!==null&&avalInfo.dias>=0&&avalInfo.dias<=30;
+  var missingReqs=[];
+  ct.comp_req.forEach(function(r,i){if(r&&d.comps[i]<1) missingReqs.push({tipo:'comp',label:COMP_LABELS[i]});});
+  ct.unit_req.forEach(function(r,i){if(r&&d.units[i]<1) missingReqs.push({tipo:'unit',label:UNIT_LABELS[i]});});
+  if(d.contrato===ct.id) return {status:'serv',hasAval:hasAval,avalInfo:avalInfo,avalVencido:avalVencido,avalProximo:avalProximo,missing:[]};
+  if(avalVencido) return {status:'falta',hasAval:false,avalInfo:avalInfo,avalVencido:true,avalProximo:false,missing:[{tipo:'aval',label:'Aval VENCIDO el '+avalInfo.vence}].concat(missingReqs),vencido:true};
+  if(hasAval&&missingReqs.length===0) return {status:'avalado',hasAval:true,avalInfo:avalInfo,avalVencido:false,avalProximo:avalProximo,missing:[]};
+  if(hasAval&&missingReqs.length>0) return {status:'avfalta',hasAval:true,avalInfo:avalInfo,avalVencido:false,avalProximo:avalProximo,missing:missingReqs};
+  if(!hasAval&&missingReqs.length===0) return {status:'puede',hasAval:false,avalInfo:null,avalVencido:false,avalProximo:false,missing:[{tipo:'aval',label:'Aval / Habilitación'}]};
+  return {status:'falta',hasAval:false,avalInfo:null,avalVencido:false,avalProximo:false,missing:[{tipo:'aval',label:'Aval / Habilitación'}].concat(missingReqs)};
 }
 
 function statsFor(id){
   if(!DATA||!id) return {serv:0,avalado:0,avfalta:0,puede:0,falta:0};
-  const ct=DATA.contratos.find(c=>c.id===id);if(!ct) return {serv:0,avalado:0,avfalta:0,puede:0,falta:0};
-  const r={serv:0,avalado:0,avfalta:0,puede:0,falta:0};
-  DATA.conductores.forEach(d=>r[getStatus(d,ct).status]++);
+  var ct=DATA.contratos.find(function(c){return c.id===id;});
+  if(!ct) return {serv:0,avalado:0,avfalta:0,puede:0,falta:0};
+  var r={serv:0,avalado:0,avfalta:0,puede:0,falta:0};
+  DATA.conductores.forEach(function(d){r[getStatus(d,ct).status]++;});
   return r;
 }
 
-// Color y texto por estado
-function statusColor(s){
-  return s==='serv'?'var(--blue-light)':s==='avalado'?'var(--green-light)':
-    s==='avfalta'?'var(--amber-light)':s==='puede'?'var(--teal-light)':'var(--orange-light)';
+function pc(p){return p>=70?'var(--green-light)':p>=40?'var(--amber-light)':'#f87171';}
+function pb(p){return p>=70?'var(--green)':p>=40?'var(--amber)':'var(--red)';}
+function pl(p){return p>=70?'ALTA':p>=40?'MEDIA':'BAJA';}
+function ini(n){return n.split(' ').slice(0,2).map(function(w){return w[0]||'';}).join('').toUpperCase();}
+function avS(p){
+  if(p>=70) return {bg:'rgba(26,122,60,.25)',fg:'#22c55e'};
+  if(p>=40) return {bg:'rgba(217,119,6,.2)',fg:'#fbbf24'};
+  return {bg:'rgba(196,30,36,.2)',fg:'#f87171'};
 }
-function statusBadgeClass(s){
-  return 'b-'+s;
-}
-function statusLabel(s, hasAval, avalInfo, avalVencido, avalProximo){
-  if(s==='serv'){
-    if(avalVencido) return '✔ EN SERVICIO · ⚠ AVAL VENCIDO';
-    if(hasAval && avalProximo) return '✔ EN SERVICIO · AVALADO ⚠ Vence pronto';
-    return hasAval ? '✔ EN SERVICIO · AVALADO' : '✔ EN SERVICIO';
-  }
-  if(s==='avalado'){
-    if(avalProximo && avalInfo?.dias !== null) return `✔ AVALADO · ⚠ Vence en ${avalInfo.dias}d`;
-    return '✔ AVALADO';
-  }
-  if(s==='avfalta'){
-    if(avalProximo && avalInfo?.dias !== null) return `🔑 AVALADO · Falta requisitos · ⚠ Vence ${avalInfo.dias}d`;
-    return '🔑 AVALADO · Falta requisitos';
-  }
-  if(s==='puede')  return '~ Cumple · Falta Aval';
-  if(s==='falta' && avalVencido) return '⚠ AVAL VENCIDO';
-  return '⚠ FALTA';
-}
-function statusCardClass(s){
-  return s==='serv'?'s-serv':s==='avalado'?'s-avalado':s==='avfalta'?'s-avfalta':s==='puede'?'s-puede':'s-falta';
-}
-function missTit(s){
-  if(s==='avfalta') return '<div class="miss-tit amber">Tiene aval — le faltan para trabajar aquí:</div>';
-  if(s==='puede')   return '<div class="miss-tit" style="color:var(--teal)">Cumple requisitos — le falta:</div>';
-  return '<div class="miss-tit orange">Para trabajar aquí necesita:</div>';
-}
-
-const pc=p=>p>=70?'var(--green-light)':p>=40?'var(--amber-light)':'#f87171';
-const pb=p=>p>=70?'var(--green)':p>=40?'var(--amber)':'var(--red)';
-const pl=p=>p>=70?'ALTA':p>=40?'MEDIA':'BAJA';
-const ini=n=>n.split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase();
-const avS=p=>p>=70?{bg:'rgba(26,122,60,.25)',fg:'#22c55e'}:p>=40?{bg:'rgba(217,119,6,.2)',fg:'#fbbf24'}:{bg:'rgba(196,30,36,.2)',fg:'#f87171'};
-const zones=()=>DATA?[...new Set(DATA.conductores.map(d=>d.zona).filter(Boolean))].sort():[];
+function zones(){return DATA?[...new Set(DATA.conductores.map(function(d){return d.zona;}).filter(Boolean))].sort():[];}
 
 function filtered(){
   if(!DATA) return [];
-  let list=DATA.conductores;
-  if(ST.search){const q=ST.search.toLowerCase();list=list.filter(d=>d.nombre.toLowerCase().includes(q)||String(d.cuil).includes(q)||d.zona.toLowerCase().includes(q));}
-  if(ST.zoneFilter) list=list.filter(d=>d.zona===ST.zoneFilter);
-  const ct=ST.ccFilter?DATA.contratos.find(c=>c.id===ST.ccFilter):null;
+  var list=DATA.conductores;
+  if(ST.search){var q=ST.search.toLowerCase();list=list.filter(function(d){return d.nombre.toLowerCase().indexOf(q)>=0||String(d.cuil).indexOf(q)>=0||d.zona.toLowerCase().indexOf(q)>=0;});}
+  if(ST.zoneFilter) list=list.filter(function(d){return d.zona===ST.zoneFilter;});
+  var ct=ST.ccFilter?DATA.contratos.find(function(c){return c.id===ST.ccFilter;}):null;
   if(ct&&ST.filter!=='all'){
-    list=list.filter(d=>{
-      const s=getStatus(d,ct).status;
+    list=list.filter(function(d){
+      var s=getStatus(d,ct).status;
       if(ST.filter==='av') return s==='avalado';
-      if(ST.filter==='avfalta') return s==='avfalta';
       if(ST.filter==='ok') return s==='puede';
       if(ST.filter==='serv') return s==='serv';
-      if(ST.filter==='falta') return s==='falta';
+      if(ST.filter==='falta') return s==='falta'||s==='avfalta';
       return true;
     });
   }
   return list;
 }
 
-function toggleMode(){
-  ST.darkMode=!ST.darkMode;document.body.classList.toggle('light',!ST.darkMode);
-  localStorage.setItem('griff_mode',ST.darkMode?'dark':'light');render();
+function statusColor(s){
+  var m={serv:'var(--blue-light)',avalado:'var(--green-light)',avfalta:'var(--amber-light)',puede:'var(--teal-light)',falta:'var(--orange-light)'};
+  return m[s]||'var(--orange-light)';
+}
+function statusBadgeClass(s){return 'b-'+s;}
+function statusCardClass(s){var m={serv:'s-serv',avalado:'s-avalado',avfalta:'s-avfalta',puede:'s-puede',falta:'s-falta'};return m[s]||'s-falta';}
+function statusLabel(s,hasAval,avalInfo,avalVencido,avalProximo){
+  if(s==='serv'){
+    if(avalVencido) return '✔ EN SERVICIO · ⚠ AVAL VENCIDO';
+    if(hasAval&&avalProximo) return '✔ EN SERVICIO · AVALADO ⚠ Vence pronto';
+    return hasAval?'✔ EN SERVICIO · AVALADO':'✔ EN SERVICIO';
+  }
+  if(s==='avalado'){
+    if(avalProximo&&avalInfo&&avalInfo.dias!==null) return '✔ AVALADO · ⚠ Vence en '+avalInfo.dias+'d';
+    return '✔ AVALADO';
+  }
+  if(s==='avfalta'){
+    if(avalProximo&&avalInfo&&avalInfo.dias!==null) return '🔑 AVALADO · Falta requisitos · ⚠ Vence '+avalInfo.dias+'d';
+    return '🔑 AVALADO · Falta requisitos';
+  }
+  if(s==='puede') return '~ Cumple · Falta Aval';
+  if(s==='falta'&&avalVencido) return '⚠ AVAL VENCIDO';
+  return '⚠ FALTA';
+}
+function missTit(s){
+  if(s==='avfalta') return '<div class="miss-tit amber">Tiene aval — le faltan para trabajar aquí:</div>';
+  if(s==='puede') return '<div class="miss-tit" style="color:var(--teal)">Cumple requisitos — le falta:</div>';
+  return '<div class="miss-tit orange">Para trabajar aquí necesita:</div>';
 }
 
-function showPdfModal(){document.getElementById('pdfOverlay').classList.add('show');}
-function hidePdfModal(){document.getElementById('pdfOverlay').classList.remove('show');}
+// ── TOGGLE MODE ─────────────────────────────────────────────────────
+function toggleMode(){
+  ST.darkMode=!ST.darkMode;
+  document.body.classList.toggle('light',!ST.darkMode);
+  localStorage.setItem('griff_mode',ST.darkMode?'dark':'light');
+  render();
+}
+
+// ── PDF ─────────────────────────────────────────────────────────────
+function showPdf(){document.getElementById('pdfOverlay').classList.add('show');}
+function hidePdf(){document.getElementById('pdfOverlay').classList.remove('show');}
 function exportPdf(tipo){
-  hidePdfModal();if(!DATA){alert('Esperá que carguen los datos.');return;}
-  const ct=ST.ccFilter?DATA.contratos.find(c=>c.id===ST.ccFilter):null;
-  const hoy=new Date().toLocaleDateString('es-AR');
-  let rows=[],titulo='';
+  hidePdf();
+  if(!DATA){alert('Esperá que carguen los datos.');return;}
+  var ct=ST.ccFilter?DATA.contratos.find(function(c){return c.id===ST.ccFilter;}):null;
+  var hoy=new Date().toLocaleDateString('es-AR');
+  var rows=[],titulo='';
   if(tipo==='disp'){
     if(!ct){alert('Seleccioná un contrato primero.');return;}
-    titulo=`Disponibles — ${ct.label} — ${hoy}`;
-    rows=DATA.conductores
-      .filter(d=>['serv','avalado','avfalta','puede'].includes(getStatus(d,ct).status))
-      .sort((a,b)=>{
-        const ORDER={serv:0,avalado:1,avfalta:2,puede:3};
-        const sa=getStatus(a,ct).status,sb=getStatus(b,ct).status;
-        return (ORDER[sa]??9)-(ORDER[sb]??9)||b.pct-a.pct;
-      })
-      .map(d=>{const {status,hasAval}=getStatus(d,ct);
-        const lbl=status==='serv'?'En Servicio':status==='avalado'?'✔ Avalado':status==='avfalta'?'🔑 Avalado c/falta':'Cumple · Falta Aval';
-        const col=status==='serv'?'#1d4ed8':status==='avalado'?'#16a34a':status==='avfalta'?'#d97706':'#0891b2';
-        return `<tr><td>${d.nombre}</td><td>${d.puesto}</td><td>${d.zona}</td>
-          <td style="color:${col};font-weight:700">${lbl}</td><td>${d.pct}%</td></tr>`;});
+    titulo='Disponibles — '+ct.label+' — '+hoy;
+    var ORDER={serv:0,avalado:1,avfalta:2,puede:3};
+    rows=DATA.conductores.filter(function(d){var s=getStatus(d,ct).status;return s==='serv'||s==='avalado'||s==='avfalta'||s==='puede';})
+      .sort(function(a,b){var sa=getStatus(a,ct).status,sb=getStatus(b,ct).status;return (ORDER[sa]||9)-(ORDER[sb]||9)||b.pct-a.pct;})
+      .map(function(d){
+        var st=getStatus(d,ct);
+        var lbl=st.status==='serv'?'En Servicio':st.status==='avalado'?'✔ Avalado':st.status==='avfalta'?'🔑 Aval+Falta':'Cumple·Sin Aval';
+        var col=st.status==='serv'?'#1d4ed8':st.status==='avalado'?'#16a34a':st.status==='avfalta'?'#d97706':'#0891b2';
+        return '<tr><td>'+d.nombre+'</td><td>'+d.puesto+'</td><td>'+d.zona+'</td><td style="color:'+col+';font-weight:700">'+lbl+'</td><td>'+d.pct+'%</td></tr>';
+      });
   }else if(tipo==='falta'){
     if(!ct){alert('Seleccioná un contrato primero.');return;}
-    titulo=`Pendientes — ${ct.label} — ${hoy}`;
-    rows=DATA.conductores.filter(d=>['avfalta','puede','falta'].includes(getStatus(d,ct).status))
-      .map(d=>{const {status,missing}=getStatus(d,ct);
-        return `<tr><td>${d.nombre}</td><td>${d.puesto}</td><td>${d.zona}</td>
-          <td style="color:${status==='avfalta'?'#d97706':'#ea580c'}">${missing.map(m=>m.label).join(', ')}</td></tr>`;});
+    titulo='Pendientes — '+ct.label+' — '+hoy;
+    rows=DATA.conductores.filter(function(d){var s=getStatus(d,ct).status;return s==='avfalta'||s==='puede'||s==='falta';})
+      .map(function(d){
+        var st=getStatus(d,ct);
+        return '<tr><td>'+d.nombre+'</td><td>'+d.puesto+'</td><td>'+d.zona+'</td><td style="color:#ea580c">'+st.missing.map(function(m){return m.label;}).join(', ')+'</td></tr>';
+      });
   }else{
-    titulo=`Nómina completa — ${hoy}`;
-    rows=[...DATA.conductores].sort((a,b)=>b.pct-a.pct)
-      .map(d=>`<tr><td>${d.nombre}</td><td>${d.puesto}</td><td>${d.zona}</td>
-        <td>${d.contrato}</td><td style="font-weight:700;color:${pc(d.pct)}">${d.pct}% ${pl(d.pct)}</td></tr>`);
+    titulo='Nómina completa — '+hoy;
+    rows=[].concat(DATA.conductores).sort(function(a,b){return b.pct-a.pct;})
+      .map(function(d){return '<tr><td>'+d.nombre+'</td><td>'+d.puesto+'</td><td>'+d.zona+'</td><td>'+d.contrato+'</td><td style="font-weight:700;color:'+pc(d.pct)+'">'+d.pct+'% '+pl(d.pct)+'</td></tr>';});
   }
-  const win=window.open('','_blank');
-  win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${titulo}</title>
-  <style>body{font-family:Arial,sans-serif;font-size:12px;padding:20px;color:#1a1a1a}
-  h1{font-size:16px;color:#C41E24;margin-bottom:4px}h2{font-size:12px;color:#555;font-weight:normal;margin-bottom:16px}
-  table{border-collapse:collapse;width:100%}th{background:#2D2D2D;color:#fff;padding:7px 10px;text-align:left;font-size:11px}
-  td{padding:6px 10px;border-bottom:1px solid #e5e7eb;font-size:11px}tr:nth-child(even) td{background:#f9fafb}
-  .footer{margin-top:20px;font-size:10px;color:#999}
-/* ── RANKING ── */
-.ranking-view{flex:1;overflow-y:auto;padding:16px}
-.rank-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
-.rank-title{font-family:var(--font-d);font-weight:800;font-size:18px}
-.rank-cc-sel{background:var(--surface2);border:1px solid var(--border);color:var(--text);
-  padding:6px 10px;border-radius:var(--r);font-family:var(--font-b);font-size:12px;outline:none;min-width:200px}
-.rank-cc-sel:focus{border-color:var(--red)}
-.rank-zone-sel{background:var(--surface2);border:1px solid var(--border);color:var(--text);
-  padding:6px 10px;border-radius:var(--r);font-family:var(--font-b);font-size:12px;outline:none}
-.rank-table{width:100%;border-collapse:collapse}
-.rank-table th{background:var(--surface);padding:9px 12px;text-align:left;
-  font-family:var(--font-d);font-weight:700;font-size:11px;letter-spacing:1px;
-  text-transform:uppercase;color:var(--text-muted);border-bottom:2px solid var(--border);
-  position:sticky;top:0;z-index:5}
-.rank-table th.th-center{text-align:center}
-.rank-table tr{border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s}
-.rank-table tr:hover td{background:var(--surface2)}
-.rank-pos{font-family:var(--font-d);font-weight:800;font-size:16px;text-align:center;
-  width:48px;padding:10px 8px}
-.rank-medal{font-size:20px;text-align:center;padding:10px 8px;width:48px}
-.rank-ava{padding:8px 0 8px 12px;width:44px}
-.rank-ava-circle{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-family:var(--font-d);font-weight:700;font-size:13px}
-.rank-name-cell{padding:10px 12px}
-.rank-name{font-size:13px;font-weight:600;color:var(--text)}
-.rank-sub{font-size:10px;color:var(--text-muted);margin-top:2px}
-.rank-status-cell{padding:10px 12px;text-align:center}
-.rank-bar-cell{padding:10px 16px;width:180px}
-.rank-bar-wrap{display:flex;align-items:center;gap:8px}
-.rank-bar-bg{flex:1;height:8px;background:var(--surface2);border-radius:4px;overflow:hidden}
-.rank-bar-fill{height:100%;border-radius:4px}
-.rank-pct{font-family:var(--font-d);font-weight:800;font-size:14px;min-width:40px;text-align:right}
-.rank-units{font-family:var(--font-d);font-size:11px;color:var(--text-muted);text-align:center;padding:10px 8px}
-.rank-podium{display:flex;justify-content:center;align-items:flex-end;gap:8px;
-  margin-bottom:20px;padding:16px;background:var(--surface);border-radius:10px;border:1px solid var(--border)}
-.podium-item{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;max-width:160px;cursor:pointer}
-.podium-block{width:100%;border-radius:6px 6px 0 0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px}
-.podium-1{height:90px;background:linear-gradient(180deg,#FFD700,#FFA000)}
-.podium-2{height:65px;background:linear-gradient(180deg,#C0C0C0,#9E9E9E)}
-.podium-3{height:50px;background:linear-gradient(180deg,#CD7F32,#A0522D)}
-.podium-medal{font-size:28px}
-.podium-name{font-family:var(--font-d);font-weight:700;font-size:12px;text-align:center;line-height:1.3}
-.podium-pct{font-family:var(--font-d);font-weight:800;font-size:16px}
-.podium-sub{font-size:10px;color:var(--text-muted);text-align:center}
-
-</style></head><body>
-  <h1>GRIFFOULIERE TRANSPORTES</h1><h2>${titulo}</h2>
-  <table><tr>${tipo==='all'?
-    '<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Contrato</th><th>Polivalencia</th>':
-    tipo==='falta'?'<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Requisitos faltantes</th>':
-    '<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Estado</th><th>Polivalencia</th>'}
-  </tr>${rows.join('')}</table>
-  <div class="footer">Generado ${hoy} · ${rows.length} registros · Griffouliere Habilitaciones</div>
-  <script>window.onload=()=>window.print();<\/script></body></html>`);
+  var win=window.open('','_blank');
+  win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>'+titulo+'</title><style>body{font-family:Arial,sans-serif;font-size:12px;padding:20px}h1{font-size:16px;color:#C41E24;margin-bottom:4px}h2{font-size:12px;color:#555;font-weight:normal;margin-bottom:16px}table{border-collapse:collapse;width:100%}th{background:#2D2D2D;color:#fff;padding:7px 10px;text-align:left;font-size:11px}td{padding:6px 10px;border-bottom:1px solid #e5e7eb;font-size:11px}tr:nth-child(even) td{background:#f9fafb}.footer{margin-top:20px;font-size:10px;color:#999}</style></head><body><h1>GRIFFOULIERE TRANSPORTES</h1><h2>'+titulo+'</h2><table><tr>'+(tipo==='all'?'<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Contrato</th><th>Polivalencia</th>':tipo==='falta'?'<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Requisitos faltantes</th>':'<th>Conductor</th><th>Puesto</th><th>Zona</th><th>Estado</th><th>Polivalencia</th>')+'</tr>'+rows.join('')+'</table><div class="footer">Generado '+hoy+' · '+rows.length+' registros</div><script>window.onload=function(){window.print();}<\/script></body></html>');
   win.document.close();
 }
 
-// ════════════════════════════════════════════════════
-//  RENDER
-// ════════════════════════════════════════════════════
+// ── RENDER ──────────────────────────────────────────────────────────
 function render(){document.getElementById('app').innerHTML=buildApp();bindEvents();}
 
 function buildApp(){
-  const drivers=filtered(),sel=ST.selected&&DATA?DATA.conductores.find(d=>d.cuil===ST.selected):null;
-  const stats=statsFor(ST.ccFilter),total=DATA?.conductores.length??0,zl=zones();
-  return `
-  <nav class="nav">
-    <div class="nav-logo">GRIFFOULIERE <span>TRANSPORTES</span></div>
-    <span class="nav-badge">LOGÍSTICA</span>
-    <div class="nav-right">
-      ${ST.lastUpd?`<span class="last-upd">🔄 ${ST.lastUpd}</span>`:''}
-      <button class="btn" id="btnPdf">📄 PDF</button>
-      <button class="btn btn-icon" id="btnMode">${ST.darkMode?'☀️':'🌙'}</button>
-      <button class="btn" id="btnRef" ${LOADING?'disabled':''}>${LOADING?'⟳ Cargando…':'⟳ Actualizar'}</button>
-    </div>
-  </nav>
+  var drivers=filtered();
+  var sel=ST.selected&&DATA?DATA.conductores.find(function(d){return d.cuil===ST.selected;}):null;
+  var stats=statsFor(ST.ccFilter);
+  var total=DATA?DATA.conductores.length:0;
+  var zl=zones();
+  var ccOpts='<option value="">— Filtrar por contrato —</option>';
+  if(DATA) DATA.contratos.forEach(function(c){ccOpts+='<option value="'+c.id+'"'+(ST.ccFilter===c.id?' selected':'')+'>'+c.label+'</option>';});
+  var zOpts='<option value="">📍 Todas las zonas</option>';
+  zl.forEach(function(z){zOpts+='<option value="'+z+'"'+(ST.zoneFilter===z?' selected':'')+'>'+z+'</option>';});
 
-  <div class="alert-wrap ${ST.alert?'show':''}">
-    ${ST.alert?`<div class="alert-box">
-      <div class="alert-icon">⚠️</div>
-      <div class="alert-body">
-        <div class="alert-title">⛔ NO SE PUEDE ASIGNAR — ${ST.alert.nombre}</div>
-        <div class="alert-detail">Para <strong>${ST.alert.contrato}</strong> le faltan:
-          ${ST.alert.missing.map(m=>`<span class="miss-tag">${m.tipo==='aval'?'🔑':m.tipo==='comp'?'📋':'🚛'} ${m.label}</span>`).join('')}
-        </div>
-      </div>
-      <button class="alert-close" id="btnAlertClose">✕</button>
-    </div>`:''}
-  </div>
+  var heroHTML='';
+  if(DATA) DATA.contratos.forEach(function(ct){
+    var s=statsFor(ct.id);
+    var active=ST.ccFilter===ct.id;
+    heroHTML+='<div class="hero-cc'+(active?' active':'')+'" data-hcc="'+ct.id+'">'
+      +'<div class="hero-cc-lbl">'+ct.label.split('·').pop().trim()+'</div>'
+      +'<div class="hero-cc-nums">'
+      +'<span class="ccn av" title="Avalados">'+(s.serv+s.avalado)+'</span>'
+      +'<span class="ccn ok" title="Cumple/Aval+falta">'+(s.avfalta+s.puede)+'</span>'
+      +'<span class="ccn f" title="Falta">'+s.falta+'</span>'
+      +'</div></div>';
+  });
 
-  <div class="hero">
-    <div class="hero-lbl">¿Para qué contrato necesitás personal hoy?</div>
-    <div class="hero-ccs">
-      ${DATA?DATA.contratos.map(ct=>{
-        const s=statsFor(ct.id),active=ST.ccFilter===ct.id;
-        return `<div class="hero-cc ${active?'active':''}" data-hcc="${ct.id}">
-          <div class="hero-cc-lbl">${ct.label.split('·').pop().trim()}</div>
-          <div class="hero-cc-nums">
-            <span class="ccn av" title="Avalados: ${s.serv+s.avalado}">${s.serv+s.avalado}</span>
-            <span class="ccn ok" title="Cumple requisitos: ${s.avfalta+s.puede}">${s.avfalta+s.puede}</span>
-            <span class="ccn f" title="Le falta">${s.falta}</span>
-          </div>
-        </div>`;
-      }).join(''):'<div style="color:var(--text-muted);font-size:12px">Cargando…</div>'}
-    </div>
-  </div>
+  var legendHTML='';
+  if(ST.ccFilter) legendHTML='<div class="legend">'
+    +'<div class="leg-item"><div class="leg-dot" style="background:var(--green-light)"></div> Avalado ✔</div>'
+    +'<div class="leg-item"><div class="leg-dot" style="background:var(--blue-light)"></div> En Servicio</div>'
+    +'<div class="leg-item"><div class="leg-dot" style="background:var(--amber-light)"></div> Avalado · Falta requisitos</div>'
+    +'<div class="leg-item"><div class="leg-dot" style="background:var(--teal-light)"></div> Cumple · Falta Aval</div>'
+    +'<div class="leg-item"><div class="leg-dot" style="background:var(--orange-light)"></div> Le falta todo</div>'
+    +'</div>';
 
-  ${ST.ccFilter?`<div class="legend">
-    <div class="leg-item"><div class="leg-dot" style="background:var(--green-light)"></div> Avalado ✔</div>
-    <div class="leg-item"><div class="leg-dot" style="background:var(--blue-light)"></div> En Servicio</div>
-    <div class="leg-item"><div class="leg-dot" style="background:var(--amber-light)"></div> Avalado · Falta unidades/certs</div>
-    <div class="leg-item"><div class="leg-dot" style="background:var(--teal-light)"></div> Cumple requisitos · Falta Aval</div>
-    <div class="leg-item"><div class="leg-dot" style="background:var(--orange-light)"></div> Le falta todo</div>
-  </div>`:''}
-
-  <div class="main">
-    <div class="sidebar">
-      <div class="sb-head">
-        <div class="sb-title">Personal · ${total} activos</div>
-        <div class="search">
-          <span class="search-ico">⌕</span>
-          <input id="srch" type="text" placeholder="Buscar nombre o CUIL…" value="${ST.search}">
-        </div>
-      </div>
-      <div class="sb-filters">
-        <div class="chip chip-all ${ST.filter==='all'?'on':''}" data-f="all">Todos</div>
-        <div class="chip chip-serv ${ST.filter==='serv'?'on':''}" data-f="serv">Servicio</div>
-        <div class="chip chip-av ${ST.filter==='av'?'on':''}" data-f="av">Avalados</div>
-        <div class="chip chip-ok ${ST.filter==='ok'?'on':''}" data-f="ok">Cumple</div>
-        <div class="chip chip-falta ${ST.filter==='falta'?'on':''}" data-f="falta">Le falta</div>
-      </div>
-      <div class="sb-zone">
-        <select id="zoneSel">
-          <option value="">📍 Todas las zonas</option>
-          ${zl.map(z=>`<option value="${z}" ${ST.zoneFilter===z?'selected':''}>${z}</option>`).join('')}
-        </select>
-      </div>
-      <div class="driver-list">
-        ${LOADING?'<div class="loading" style="height:200px"><div class="spinner"></div><span style="font-size:12px">Cargando…</span></div>':
-          ERR?`<div class="err-box">❌ ${ERR}</div>`:
-          drivers.length===0?'<div class="empty"><span style="font-size:26px">🔍</span><span style="font-size:12px">Sin resultados</span></div>':
-          drivers.map(d=>{
-            const av=avS(d.pct);
-            const ct2=ST.ccFilter?DATA.contratos.find(c=>c.id===ST.ccFilter):null;
-            const st2=ct2?getStatus(d,ct2).status:null;
-            let bg='';
-            if(st2==='serv')    bg='background:rgba(29,78,216,.07)';
-            if(st2==='avalado') bg='background:rgba(26,122,60,.07)';
-            if(st2==='avfalta') bg='background:rgba(217,119,6,.07)';
-            if(st2==='puede')   bg='background:rgba(8,145,178,.07)';
-            if(st2==='falta')   bg='background:rgba(234,88,12,.04)';
-            return `<div class="d-item ${sel&&sel.cuil===d.cuil?'sel':''}" data-cuil="${d.cuil}" style="${bg}">
-              <div class="d-ava" style="background:${av.bg};color:${av.fg}">${ini(d.nombre)}</div>
-              <div class="d-info">
-                <div class="d-name">${d.nombre}</div>
-                <div class="d-sub">${d.puesto.replace('Conductor de ','C.')} · ${d.zona}</div>
-              </div>
-              <div class="d-pct" style="color:${pc(d.pct)}">${d.pct}%</div>
-            </div>`;
-          }).join('')}
-      </div>
-    </div>
-
-    <div class="content">
-      ${ST.ccFilter&&DATA?`<div class="stats">
-        <div class="stat">
-          <div class="stat-v" style="color:var(--green-light)">${stats.serv+stats.avalado}</div>
-          <div class="stat-l">Avalados ✔</div>
-        </div>
-        <div class="stat">
-          <div class="stat-v" style="color:var(--amber-light)">${stats.avfalta}</div>
-          <div class="stat-l">Aval·Falta algo</div>
-        </div>
-        <div class="stat">
-          <div class="stat-v" style="color:var(--teal-light)">${stats.puede}</div>
-          <div class="stat-l">Cumple·Falta Aval</div>
-        </div>
-        <div class="stat">
-          <div class="stat-v" style="color:var(--orange-light)">${stats.falta}</div>
-          <div class="stat-l">Le falta todo</div>
-        </div>
-        <div class="stat">
-          <div>
-            <div style="font-size:10px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase">Contrato</div>
-            <div style="font-size:12px;font-weight:600;margin-top:2px">${DATA.contratos.find(c=>c.id===ST.ccFilter)?.label}</div>
-          </div>
-          <button class="btn" id="btnClearF">✕</button>
-        </div>
-      </div>`:''}
-
-      <div class="tabs">
-        <div class="tab ${ST.tab==='quick'?'on':''}" data-tab="quick">🟢 Disponibles</div>
-        <div class="tab ${ST.tab==='detail'?'on':''}" data-tab="detail">👤 Detalle</div>
-        <div class="tab ${ST.tab==='matrix'?'on':''}" data-tab="matrix">📊 Matriz</div>
-        <div class="tab ${ST.tab==='ranking'?'on':''}" data-tab="ranking">🏆 Ranking</div>
-      </div>
-
-      ${ST.tab==='quick'?buildQuick():ST.tab==='detail'?buildDetail(sel):ST.tab==='matrix'?buildMatrix(drivers):buildRanking()}
-    </div>
-  </div>`;
-}
-
-function buildQuick(){
-  if(!DATA) return '';
-  if(!ST.ccFilter) return `<div class="quick-view"><div class="empty" style="height:320px">
-    <span style="font-size:44px">☝️</span>
-    <span style="font-family:var(--font-d);font-size:16px;color:var(--text-muted);letter-spacing:.5px">Seleccioná un contrato arriba</span>
-    <span style="font-size:11px;color:var(--text-dim);text-align:center;max-width:240px;line-height:1.7">
-      🟢 Avalados · 🔵 En Servicio · 🟡 Aval+Falta algo · 🔵 Cumple·Sin Aval
-    </span>
-  </div></div>`;
-  const ct=DATA.contratos.find(c=>c.id===ST.ccFilter);if(!ct) return '';
-  // Mostrar: serv, avalado, avfalta, puede (ordenados)
-  const ORDER={serv:0,avalado:1,avfalta:2,puede:3};
-  let disp=DATA.conductores
-    .filter(d=>['serv','avalado','avfalta','puede'].includes(getStatus(d,ct).status))
-    .map(d=>({...d,_st:getStatus(d,ct)}));
-  if(ST.zoneFilter) disp=disp.filter(d=>d.zona===ST.zoneFilter);
-  disp.sort((a,b)=>(ORDER[a._st.status]??9)-(ORDER[b._st.status]??9)||b.pct-a.pct);
-
-  return `<div class="quick-view">
-    <div class="qv-title">${disp.length} disponible${disp.length!==1?'s':''} — ${ct.label}</div>
-    <div class="qv-sub">🟢 Avalado ✔ · 🔵 En Servicio · 🟡 Avalado con falta · 🩵 Cumple sin aval</div>
-    ${disp.length===0?`<div class="empty" style="height:200px">
-      <span style="font-size:32px">😔</span>
-      <span style="font-size:13px;color:var(--text-muted)">Sin disponibles${ST.zoneFilter?' en '+ST.zoneFilter:''}</span>
-    </div>`:`<div class="qv-grid">
-      ${disp.map(d=>{const {status,hasAval,missing}=d._st,av=avS(d.pct);
-        return `<div class="qv-card ${status}" data-cuil="${d.cuil}">
-          <div class="qv-top">
-            <div class="qv-ava" style="background:${av.bg};color:${av.fg}">${ini(d.nombre)}</div>
-            <div class="qv-pct" style="color:${pc(d.pct)}">${d.pct}%</div>
-          </div>
-          <div class="qv-name">${d.nombre}</div>
-          <div class="qv-sub2">${d.puesto.replace('Conductor de ','C.')} · ${d.zona}</div>
-          <div class="qv-badge ${status}">${statusLabel(status,hasAval,avalInfo,avalVencido,avalProximo)}</div>
-          ${avalVencido?'<div class="qv-missing" style="color:#f87171">⛔ Aval vencido el '+avalInfo.vence+'</div>':''}
-          ${!avalVencido&&avalProximo&&avalInfo?.vence?`<div class="qv-missing" style="color:var(--amber-light)">⚠ Aval vence en ${avalInfo.dias} días (${avalInfo.vence})</div>`:''}
-          ${status==='avfalta'?`<div class="qv-missing">Falta: ${missing.map(m=>m.label).join(', ')}</div>`:''}
-        </div>`;}).join('')}
-    </div>`}
-  </div>`;
-}
-
-function buildDetail(sel){
-  if(!DATA) return '';
-  if(!sel) return `<div class="detail"><div class="empty" style="height:300px">
-    <span style="font-size:36px">👤</span>
-    <span style="font-family:var(--font-d);font-size:15px;color:var(--text-muted)">Seleccioná un conductor de la lista</span>
-  </div></div>`;
-  const av=avS(sel.pct);
-  return `<div class="detail">
-    <div class="d-hdr">
-      <div class="d-big-ava" style="background:${av.bg};color:${av.fg}">${ini(sel.nombre)}</div>
-      <div>
-        <div class="d-full-name">${sel.nombre}</div>
-        <div class="d-meta">
-          <span>👷 ${sel.puesto}</span><span>📍 ${sel.zona}</span>
-          <span>🪪 ${sel.cuil}</span>${sel.empresa?`<span>🏢 ${sel.empresa}</span>`:''}
-        </div>
-      </div>
-    </div>
-    <div class="poly-wrap">
-      <div class="poly-hdr">
-        <div class="poly-tit">Polivalencia — ${sel.score}/11 unidades</div>
-        <div class="poly-val" style="color:${pc(sel.pct)}">${sel.pct}%
-          <span style="font-size:12px;color:var(--text-muted);font-weight:600"> ${pl(sel.pct)}</span>
-        </div>
-      </div>
-      <div class="poly-bar"><div class="poly-fill" style="width:${sel.pct}%;background:${pb(sel.pct)}"></div></div>
-    </div>
-    <div class="sec-lbl">Certificaciones</div>
-    <div class="tags">${COMP_LABELS.map((l,i)=>`<div class="tag ${sel.comps[i]?'tag-y':'tag-n'}">${sel.comps[i]?'✓':'✗'} ${l}</div>`).join('')}</div>
-    <div class="sec-lbl">Unidades habilitadas</div>
-    <div class="tags">${UNIT_LABELS.map((l,i)=>`<div class="tag ${sel.units[i]?'tag-y':'tag-n'}">${sel.units[i]?'✓':'✗'} ${l}</div>`).join('')}</div>
-    <div class="sec-lbl" style="margin-top:16px">Estado por contrato</div>
-    <div class="cc-grid">${DATA.contratos.map(ct=>{
-      const {status,hasAval,missing}=getStatus(sel,ct);
-      return `<div class="cc-card ${statusCardClass(status)}">
-        <div class="cc-hdr" ${(status==='falta'||status==='avfalta'||status==='puede')?`data-alert="${sel.cuil}|${ct.id}"`:''}
-          style="${(status==='falta'||status==='avfalta'||status==='puede')?'cursor:pointer':''}">
-          <div class="cc-dot" style="background:${statusColor(status)}"></div>
-          <div class="cc-name">${ct.label}</div>
-          <div class="cc-badges">
-            <span class="cc-badge ${statusBadgeClass(status)}">${statusLabel(status,hasAval,avalInfo,avalVencido,avalProximo)}</span>
-            ${avalVencido?'<span class="cc-badge" style="background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.3)">⛔ VENCIDO '+avalInfo.vence+'</span>':''}
-            ${!avalVencido&&avalProximo&&avalInfo?.vence?`<span class="cc-badge" style="background:rgba(217,119,6,.15);color:var(--amber-light);border:1px solid rgba(217,119,6,.3)">⚠ Vence ${avalInfo.dias}d · ${avalInfo.vence}</span>`:''}
-            ${!avalVencido&&!avalProximo&&hasAval&&avalInfo?.vence?`<span class="cc-badge b-aval-ok">🔑 Vigente hasta ${avalInfo.vence}</span>`:''}
-            ${!avalVencido&&!avalProximo&&hasAval&&!avalInfo?.vence?'<span class="cc-badge b-aval-ok">🔑 AVAL OK</span>':''}
-          </div>
-        </div>
-        ${missing.length>0?`<div class="cc-miss">
-          ${missTit(status)}
-          <div class="miss-items">${missing.map(m=>`<div class="miss-item mi-${m.tipo}">${m.tipo==='aval'?'🔑':m.tipo==='comp'?'📋':'🚛'} ${m.label}</div>`).join('')}</div>
-        </div>`:''}
-      </div>`;
-    }).join('')}</div>
-  </div>`;
-}
-
-function buildMatrix(drivers){
-  if(!DATA) return '';
-  const MAX=80,shown=drivers.slice(0,MAX);
-  const cellClass={serv:'c-serv',avalado:'c-avalado',avfalta:'c-avfalta',puede:'c-puede',falta:'c-falta'};
-  const cellTxt={serv:'✔S',avalado:'✔AV',avfalta:'🔑⚠',puede:'~AV',falta:'⚠'};
-  return `<div class="mat-wrap">
-    <table class="mat-tbl">
-      <thead><tr>
-        <th class="th-d">Conductor</th>
-        ${DATA.contratos.map(ct=>`<th data-cc="${ct.id}">${ct.label.split('·').pop().trim()}</th>`).join('')}
-        <th>Pol.</th>
-      </tr></thead>
-      <tbody>${shown.map(d=>`<tr>
-        <td class="td-d" data-cuil="${d.cuil}" title="${d.nombre}">${d.nombre.length>23?d.nombre.slice(0,22)+'…':d.nombre}</td>
-        ${DATA.contratos.map(ct=>{
-          const {status,missing}=getStatus(d,ct);
-          const cls=cellClass[status]||'c-falta';
-          const txt=cellTxt[status]||'⚠';
-          const canAlert=status==='falta'||status==='avfalta'||status==='puede';
-          const tip=missing.map(m=>(m.tipo==='aval'?'🔑':m.tipo==='comp'?'📋':'🚛')+' '+m.label).join('\n');
-          return `<td class="${cls}" ${canAlert?`data-alert="${d.cuil}|${ct.id}"`:''} title="${tip||statusLabel(status,false)}">${txt}</td>`;
-        }).join('')}
-        <td style="color:${pc(d.pct)};font-weight:700">${d.pct}%</td>
-      </tr>`).join('')}</tbody>
-    </table>
-    ${drivers.length>MAX?`<div style="text-align:center;padding:12px;color:var(--text-muted);font-size:11px">Mostrando ${MAX} de ${drivers.length} — usá el buscador para ver más</div>`:''}
-    <div style="padding:10px 16px;background:var(--surface);border-top:1px solid var(--border);display:flex;gap:14px;flex-wrap:wrap;font-size:10px">
-      <span style="color:var(--green-light)">✔AV = Avalado</span>
-      <span style="color:var(--blue-light)">✔S = En Servicio</span>
-      <span style="color:var(--amber-light)">🔑⚠ = Aval+Falta algo</span>
-      <span style="color:var(--teal-light)">~AV = Cumple·Sin Aval</span>
-      <span style="color:var(--orange-light)">⚠ = Falta todo</span>
-    </div>
-  </div>`;
-}
-
-
-function buildRanking(){
-  if(!DATA) return '';
-
-  const zl=zones();
-  const ccSel=ST.rankCC||'';
-  const zoneSel=ST.rankZone||'';
-
-  let list=DATA.conductores;
-  if(zoneSel) list=list.filter(d=>d.zona===zoneSel);
-  const ranked=[...list].sort((a,b)=>b.pct-a.pct);
-  const ct=ccSel?DATA.contratos.find(c=>c.id===ccSel):null;
-  const titulo=ct?'Ranking — '+ct.label:'Ranking General de Polivalencia';
-
-  function statusBadge(d){
-    if(!ct) return '';
-    const s=getStatus(d,ct).status;
-    const map={
-      serv:'background:var(--blue-sub);color:var(--blue-light)',
-      avalado:'background:var(--green-sub);color:var(--green-light)',
-      avfalta:'background:var(--amber-sub);color:var(--amber-light)',
-      puede:'background:var(--teal-sub);color:var(--teal-light)',
-      falta:'background:var(--orange-sub);color:var(--orange-light)',
-    };
-    const lbl={serv:'EN SERV.',avalado:'AVALADO',avfalta:'AV+FALTA',puede:'SIN AVAL',falta:'FALTA'};
-    return '<span style="font-size:9px;padding:1px 6px;border-radius:10px;'+map[s]+'">'+lbl[s]+'</span>';
+  var statsHTML='';
+  if(ST.ccFilter&&DATA){
+    var ctLabel=DATA.contratos.find(function(c){return c.id===ST.ccFilter;});
+    statsHTML='<div class="stats">'
+      +'<div class="stat"><div class="stat-v" style="color:var(--green-light)">'+(stats.serv+stats.avalado)+'</div><div class="stat-l">Avalados ✔</div></div>'
+      +'<div class="stat"><div class="stat-v" style="color:var(--amber-light)">'+stats.avfalta+'</div><div class="stat-l">Aval·Falta algo</div></div>'
+      +'<div class="stat"><div class="stat-v" style="color:var(--teal-light)">'+stats.puede+'</div><div class="stat-l">Cumple·Sin Aval</div></div>'
+      +'<div class="stat"><div class="stat-v" style="color:var(--orange-light)">'+stats.falta+'</div><div class="stat-l">Le falta todo</div></div>'
+      +'<div class="stat"><div><div style="font-size:10px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase">Contrato</div>'
+      +'<div style="font-size:12px;font-weight:600;margin-top:2px">'+(ctLabel?ctLabel.label:'')+'</div></div>'
+      +'<button class="btn" id="btnClearF">✕</button></div>'
+      +'</div>';
   }
 
-  // Podium (top 3)
-  let podiumHTML='';
+  var sbList='';
+  if(LOADING) sbList='<div class="loading" style="height:200px"><div class="spinner"></div><span style="font-size:12px">Cargando…</span></div>';
+  else if(ERR) sbList='<div class="err-box">❌ '+ERR+'</div>';
+  else if(!drivers.length) sbList='<div class="empty"><span style="font-size:26px">🔍</span><span style="font-size:12px">Sin resultados</span></div>';
+  else drivers.forEach(function(d){
+    var av=avS(d.pct);
+    var ct2=ST.ccFilter?DATA.contratos.find(function(c){return c.id===ST.ccFilter;}):null;
+    var st2=ct2?getStatus(d,ct2).status:null;
+    var bg='';
+    if(st2==='serv') bg='background:rgba(29,78,216,.07)';
+    else if(st2==='avalado') bg='background:rgba(26,122,60,.07)';
+    else if(st2==='avfalta') bg='background:rgba(217,119,6,.07)';
+    else if(st2==='puede') bg='background:rgba(8,145,178,.07)';
+    else if(st2==='falta') bg='background:rgba(234,88,12,.04)';
+    sbList+='<div class="d-item'+(sel&&sel.cuil===d.cuil?' sel':'')+'" data-cuil="'+d.cuil+'" style="'+bg+'">'
+      +'<div class="d-ava" style="background:'+av.bg+';color:'+av.fg+'">'+ini(d.nombre)+'</div>'
+      +'<div class="d-info"><div class="d-name">'+d.nombre+'</div>'
+      +'<div class="d-sub">'+d.puesto.replace('Conductor de ','C.')+' · '+d.zona+'</div></div>'
+      +'<div class="d-pct" style="color:'+pc(d.pct)+'">'+d.pct+'%</div>'
+      +'</div>';
+  });
+
+  var alertHTML='';
+  if(ST.alert) alertHTML='<div class="alert-box"><div class="alert-icon">⚠️</div><div class="alert-body">'
+    +'<div class="alert-title">⛔ NO SE PUEDE ASIGNAR — '+ST.alert.nombre+'</div>'
+    +'<div class="alert-detail">Para <strong>'+ST.alert.contrato+'</strong> le faltan: '
+    +ST.alert.missing.map(function(m){return '<span class="miss-tag">'+(m.tipo==='aval'?'🔑':m.tipo==='comp'?'📋':'🚛')+' '+m.label+'</span>';}).join('')
+    +'</div></div><button class="alert-close" id="btnAlertClose">✕</button></div>';
+
+  var contentHTML='';
+  if(ST.tab==='quick') contentHTML=buildQuick();
+  else if(ST.tab==='detail') contentHTML=buildDetail(sel);
+  else if(ST.tab==='matrix') contentHTML=buildMatrix(drivers);
+  else contentHTML=buildRanking();
+
+  return '<nav class="nav">'
+    +'<div class="nav-logo">GRIFFOULIERE <span>TRANSPORTES</span></div>'
+    +'<span class="nav-badge">LOGÍSTICA</span>'
+    +'<div class="nav-right">'
+    +(ST.lastUpd?'<span class="last-upd">🔄 '+ST.lastUpd+'</span>':'')
+    +'<button class="btn" id="btnPdf">📄 PDF</button>'
+    +'<button class="btn btn-icon" id="btnMode">'+(ST.darkMode?'☀️':'🌙')+'</button>'
+    +'<button class="btn" id="btnRef"'+(LOADING?' disabled':'')+'>'+(LOADING?'⟳ Cargando…':'⟳ Actualizar')+'</button>'
+    +'</div></nav>'
+    +'<div class="alert-wrap'+(ST.alert?' show':'')+'">'+alertHTML+'</div>'
+    +'<div class="hero"><div class="hero-lbl">¿Para qué contrato necesitás personal hoy?</div>'
+    +'<div class="hero-ccs">'+heroHTML+'</div></div>'
+    +legendHTML
+    +'<div class="main">'
+    +'<div class="sidebar"><div class="sb-head"><div class="sb-title">Personal · '+total+' activos</div>'
+    +'<div class="search"><span class="search-ico">⌕</span>'
+    +'<input id="srch" type="text" placeholder="Buscar nombre o CUIL…" value="'+ST.search+'"></div></div>'
+    +'<div class="sb-filters">'
+    +'<div class="chip chip-all'+(ST.filter==='all'?' on':'')+'" data-f="all">Todos</div>'
+    +'<div class="chip chip-serv'+(ST.filter==='serv'?' on':'')+'" data-f="serv">Servicio</div>'
+    +'<div class="chip chip-av'+(ST.filter==='av'?' on':'')+'" data-f="av">Avalados</div>'
+    +'<div class="chip chip-ok'+(ST.filter==='ok'?' on':'')+'" data-f="ok">Cumple</div>'
+    +'<div class="chip chip-falta'+(ST.filter==='falta'?' on':'')+'" data-f="falta">Le falta</div>'
+    +'</div>'
+    +'<div class="sb-zone"><select id="zoneSel">'+zOpts+'</select></div>'
+    +'<div class="driver-list">'+sbList+'</div></div>'
+    +'<div class="content">'+statsHTML
+    +'<div class="tabs">'
+    +'<div class="tab'+(ST.tab==='quick'?' on':'')+'" data-tab="quick">🟢 Disponibles</div>'
+    +'<div class="tab'+(ST.tab==='detail'?' on':'')+'" data-tab="detail">👤 Detalle</div>'
+    +'<div class="tab'+(ST.tab==='matrix'?' on':'')+'" data-tab="matrix">📊 Matriz</div>'
+    +'<div class="tab'+(ST.tab==='ranking'?' on':'')+'" data-tab="ranking">🏆 Ranking</div>'
+    +'</div>'
+    +contentHTML
+    +'</div></div>';
+}
+
+// ── BUILD QUICK ─────────────────────────────────────────────────────
+function buildQuick(){
+  if(!DATA) return '';
+  if(!ST.ccFilter) return '<div class="quick-view"><div class="empty" style="height:320px">'
+    +'<span style="font-size:44px">☝️</span>'
+    +'<span style="font-family:var(--font-d);font-size:16px;color:var(--text-muted)">Seleccioná un contrato arriba</span>'
+    +'<span style="font-size:11px;color:var(--text-dim);text-align:center;max-width:240px;line-height:1.6">'
+    +'🟢 Avalado · 🔵 En Servicio · 🟡 Aval+Falta · 🩵 Cumple sin aval</span></div></div>';
+  var ct=DATA.contratos.find(function(c){return c.id===ST.ccFilter;});
+  if(!ct) return '';
+  var disp=DATA.conductores.filter(function(d){
+    var s=getStatus(d,ct).status;
+    return s==='serv'||s==='avalado'||s==='avfalta'||s==='puede';
+  });
+  if(ST.zoneFilter) disp=disp.filter(function(d){return d.zona===ST.zoneFilter;});
+  var ORDER={serv:0,avalado:1,avfalta:2,puede:3};
+  disp.sort(function(a,b){
+    var sa=getStatus(a,ct).status,sb=getStatus(b,ct).status;
+    return ((ORDER[sa]!=null?ORDER[sa]:9)-(ORDER[sb]!=null?ORDER[sb]:9))||b.pct-a.pct;
+  });
+  var cards='';
+  disp.forEach(function(d){
+    var st=getStatus(d,ct);
+    var status=st.status,hasAval=st.hasAval,avalInfo=st.avalInfo,avalVencido=st.avalVencido,avalProximo=st.avalProximo,missing=st.missing;
+    var av=avS(d.pct);
+    var alertVenc=avalVencido?'<div class="qv-missing" style="color:#f87171">⛔ Aval vencido el '+avalInfo.vence+'</div>':'';
+    var alertProx=(!avalVencido&&avalProximo&&avalInfo&&avalInfo.vence)?'<div class="qv-missing" style="color:var(--amber-light)">⚠ Vence en '+avalInfo.dias+' días ('+avalInfo.vence+')</div>':'';
+    var alertFalt=(status==='avfalta')?'<div class="qv-missing">Falta: '+missing.map(function(m){return m.label;}).join(', ')+'</div>':'';
+    cards+='<div class="qv-card '+status+'" data-cuil="'+d.cuil+'">'
+      +'<div class="qv-top"><div class="qv-ava" style="background:'+av.bg+';color:'+av.fg+'">'+ini(d.nombre)+'</div>'
+      +'<div class="qv-pct" style="color:'+pc(d.pct)+'">'+d.pct+'%</div></div>'
+      +'<div class="qv-name">'+d.nombre+'</div>'
+      +'<div class="qv-sub2">'+d.puesto.replace('Conductor de ','C.')+' · '+d.zona+'</div>'
+      +'<div class="qv-badge '+status+'">'+statusLabel(status,hasAval,avalInfo,avalVencido,avalProximo)+'</div>'
+      +alertVenc+alertProx+alertFalt
+      +'</div>';
+  });
+  if(!disp.length) return '<div class="quick-view">'
+    +'<div class="qv-title">0 disponibles — '+ct.label+'</div>'
+    +'<div class="empty" style="height:200px"><span style="font-size:32px">😔</span>'
+    +'<span style="font-size:13px;color:var(--text-muted)">Sin disponibles'+(ST.zoneFilter?' en '+ST.zoneFilter:'')+'</span></div></div>';
+  return '<div class="quick-view">'
+    +'<div class="qv-title">'+disp.length+' disponible'+(disp.length!==1?'s':'')+' — '+ct.label+'</div>'
+    +'<div class="qv-sub">🟢 Avalado ✔ · 🔵 En Servicio · 🟡 Aval+Falta · 🩵 Cumple sin aval · Ordenado por polivalencia</div>'
+    +'<div class="qv-grid">'+cards+'</div></div>';
+}
+
+// ── BUILD DETAIL ─────────────────────────────────────────────────────
+function buildDetail(sel){
+  if(!DATA) return '';
+  if(!sel) return '<div class="detail"><div class="empty" style="height:300px">'
+    +'<span style="font-size:36px">👤</span>'
+    +'<span style="font-family:var(--font-d);font-size:15px;color:var(--text-muted)">Seleccioná un conductor de la lista</span>'
+    +'</div></div>';
+  var av=avS(sel.pct);
+  var compTags='',unitTags='';
+  COMP_LABELS.forEach(function(l,i){compTags+='<div class="tag '+(sel.comps[i]?'tag-y':'tag-n')+'">'+(sel.comps[i]?'✓':'✗')+' '+l+'</div>';});
+  UNIT_LABELS.forEach(function(l,i){unitTags+='<div class="tag '+(sel.units[i]?'tag-y':'tag-n')+'">'+(sel.units[i]?'✓':'✗')+' '+l+'</div>';});
+  var ccCards='';
+  DATA.contratos.forEach(function(ct){
+    var st=getStatus(sel,ct);
+    var status=st.status,hasAval=st.hasAval,avalInfo=st.avalInfo,avalVencido=st.avalVencido,avalProximo=st.avalProximo,missing=st.missing;
+    var canAlert=status==='falta'||status==='avfalta'||status==='puede';
+    var vencBadge=avalVencido?'<span class="cc-badge" style="background:rgba(239,68,68,.15);color:#f87171">⛔ VENCIDO '+avalInfo.vence+'</span>':'';
+    var proxBadge=(!avalVencido&&avalProximo&&avalInfo&&avalInfo.vence)?'<span class="cc-badge" style="background:rgba(217,119,6,.15);color:var(--amber-light)">⚠ Vence '+avalInfo.dias+'d · '+avalInfo.vence+'</span>':'';
+    var vigBadge=(!avalVencido&&!avalProximo&&hasAval&&avalInfo&&avalInfo.vence)?'<span class="cc-badge b-aval-ok">🔑 Vigente hasta '+avalInfo.vence+'</span>':(!avalVencido&&!avalProximo&&hasAval?'<span class="cc-badge b-aval-ok">🔑 AVAL OK</span>':'');
+    var missHTML='';
+    if(missing.length) missHTML='<div class="cc-miss">'+missTit(status)+'<div class="miss-items">'
+      +missing.map(function(m){return '<div class="miss-item mi-'+m.tipo+'">'+(m.tipo==='aval'?'🔑':m.tipo==='comp'?'📋':'🚛')+' '+m.label+'</div>';}).join('')
+      +'</div></div>';
+    ccCards+='<div class="cc-card '+statusCardClass(status)+'">'
+      +'<div class="cc-hdr"'+(canAlert?' data-alert="'+sel.cuil+'|'+ct.id+'"':'')+' style="'+(canAlert?'cursor:pointer':'')+'">'
+      +'<div class="cc-dot" style="background:'+statusColor(status)+'"></div>'
+      +'<div class="cc-name">'+ct.label+'</div>'
+      +'<div class="cc-badges"><span class="cc-badge '+statusBadgeClass(status)+'">'+statusLabel(status,hasAval,avalInfo,avalVencido,avalProximo)+'</span>'
+      +vencBadge+proxBadge+vigBadge+'</div></div>'
+      +missHTML+'</div>';
+  });
+  return '<div class="detail">'
+    +'<div class="d-hdr"><div class="d-big-ava" style="background:'+av.bg+';color:'+av.fg+'">'+ini(sel.nombre)+'</div>'
+    +'<div><div class="d-full-name">'+sel.nombre+'</div>'
+    +'<div class="d-meta"><span>👷 '+sel.puesto+'</span><span>📍 '+sel.zona+'</span>'
+    +'<span>🪪 '+sel.cuil+'</span>'+(sel.empresa?'<span>🏢 '+sel.empresa+'</span>':'')+'</div></div></div>'
+    +'<div class="poly-wrap"><div class="poly-hdr">'
+    +'<div class="poly-tit">Polivalencia — '+sel.score+'/11 unidades</div>'
+    +'<div class="poly-val" style="color:'+pc(sel.pct)+'">'+sel.pct+'% <span style="font-size:12px;color:var(--text-muted);font-weight:600">'+pl(sel.pct)+'</span></div></div>'
+    +'<div class="poly-bar"><div class="poly-fill" style="width:'+sel.pct+'%;background:'+pb(sel.pct)+'"></div></div></div>'
+    +'<div class="sec-lbl">Certificaciones</div><div class="tags">'+compTags+'</div>'
+    +'<div class="sec-lbl">Unidades habilitadas</div><div class="tags">'+unitTags+'</div>'
+    +'<div class="sec-lbl" style="margin-top:16px">Estado por contrato</div>'
+    +'<div class="cc-grid">'+ccCards+'</div></div>';
+}
+
+// ── BUILD MATRIX ─────────────────────────────────────────────────────
+function buildMatrix(drivers){
+  if(!DATA) return '';
+  var MAX=80,shown=drivers.slice(0,MAX);
+  var cellClass={serv:'c-serv',avalado:'c-avalado',avfalta:'c-avfalta',puede:'c-puede',falta:'c-falta'};
+  var cellTxt={serv:'✔S',avalado:'✔AV',avfalta:'🔑⚠',puede:'~AV',falta:'⚠'};
+  var ths='';
+  DATA.contratos.forEach(function(ct){ths+='<th data-cc="'+ct.id+'">'+ct.label.split('·').pop().trim()+'</th>';});
+  var trs='';
+  shown.forEach(function(d){
+    var cells='';
+    DATA.contratos.forEach(function(ct){
+      var st=getStatus(d,ct);
+      var status=st.status,missing=st.missing;
+      var cls=cellClass[status]||'c-falta';
+      var txt=cellTxt[status]||'⚠';
+      var canAlert=status==='falta'||status==='avfalta'||status==='puede';
+      var tip=missing.map(function(m){return (m.tipo==='aval'?'🔑':m.tipo==='comp'?'📋':'🚛')+' '+m.label;}).join('\n');
+      cells+='<td class="'+cls+'"'+(canAlert?' data-alert="'+d.cuil+'|'+ct.id+'"':'')+' title="'+(tip||statusLabel(status,false,null,false,false))+'">'+txt+'</td>';
+    });
+    trs+='<tr><td class="td-d" data-cuil="'+d.cuil+'" title="'+d.nombre+'">'+(d.nombre.length>23?d.nombre.slice(0,22)+'…':d.nombre)+'</td>'+cells+'<td style="color:'+pc(d.pct)+';font-weight:700">'+d.pct+'%</td></tr>';
+  });
+  var moreHTML=drivers.length>MAX?'<div style="text-align:center;padding:12px;color:var(--text-muted);font-size:11px">Mostrando '+MAX+' de '+drivers.length+' — usá el buscador para ver más</div>':'';
+  return '<div class="mat-wrap"><table class="mat-tbl"><thead><tr><th class="th-d">Conductor</th>'+ths+'<th>Pol.</th></tr></thead><tbody>'+trs+'</tbody></table>'
+    +moreHTML
+    +'<div style="padding:8px 16px;background:var(--surface);border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap;font-size:10px">'
+    +'<span style="color:var(--green-light)">✔AV=Avalado</span>'
+    +'<span style="color:var(--blue-light)">✔S=En Servicio</span>'
+    +'<span style="color:var(--amber-light)">🔑⚠=Aval+Falta</span>'
+    +'<span style="color:var(--teal-light)">~AV=Cumple·Sin Aval</span>'
+    +'<span style="color:var(--orange-light)">⚠=Falta</span>'
+    +'</div></div>';
+}
+
+// ── BUILD RANKING ────────────────────────────────────────────────────
+function buildRanking(){
+  if(!DATA) return '<div class="rank-view"><div class="loading" style="height:300px"><div class="spinner"></div></div></div>';
+  var ccSel=ST.rankCC||'';
+  var zoneSel=ST.rankZone||'';
+  var zl=zones();
+  var list=DATA.conductores;
+  if(zoneSel) list=list.filter(function(d){return d.zona===zoneSel;});
+  var ranked=[].concat(list).sort(function(a,b){return b.pct-a.pct;});
+  var ct=ccSel?DATA.contratos.find(function(c){return c.id===ccSel;}):null;
+  var titulo=ct?'Ranking — '+ct.label:'Ranking General de Polivalencia';
+
+  function sBadge(d){
+    if(!ct) return '';
+    var s=getStatus(d,ct).status;
+    var styles={serv:'background:var(--blue-sub);color:var(--blue-light)',avalado:'background:var(--green-sub);color:var(--green-light)',avfalta:'background:var(--amber-sub);color:var(--amber-light)',puede:'background:var(--teal-sub);color:var(--teal-light)',falta:'background:var(--orange-sub);color:var(--orange-light)'};
+    var lbls={serv:'EN SERV.',avalado:'AVALADO',avfalta:'AV+FALTA',puede:'SIN AVAL',falta:'FALTA'};
+    return '<span style="font-size:9px;padding:1px 6px;border-radius:10px;'+styles[s]+'">'+lbls[s]+'</span>';
+  }
+
+  // Podium
+  var podiumHTML='';
   if(ranked.length>=3){
-    const order=[ranked[1],ranked[0],ranked[2]];
-    const medals=['🥈','🥇','🥉'];
-    const heights=['65px','90px','50px'];
-    const colors=[
-      'linear-gradient(180deg,#C0C0C0,#9E9E9E)',
-      'linear-gradient(180deg,#FFD700,#FFA000)',
-      'linear-gradient(180deg,#CD7F32,#A0522D)',
-    ];
-    podiumHTML='<div class="rank-podium">';
-    order.forEach(function(d,i){
-      const av=avS(d.pct);
-      podiumHTML+='<div class="podium-item" data-cuil="'+d.cuil+'">'
-        +'<div class="podium-name">'+d.nombre.split(' ').slice(0,2).join(' ')+'</div>'
-        +'<div class="podium-pct" style="color:'+pc(d.pct)+'">'+d.pct+'%</div>'
-        +statusBadge(d)
-        +'<div style="width:100%;height:'+heights[i]+';border-radius:6px 6px 0 0;'
-        +'background:'+colors[i]+';display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px">'
-        +'<span style="font-size:28px">'+medals[i]+'</span></div>'
-        +'<div class="podium-sub">'+d.zona+'</div>'
+    var podOrder=[ranked[1],ranked[0],ranked[2]];
+    var podMedals=['🥈','🥇','🥉'];
+    var podHeights=['58px','80px','44px'];
+    var podColors=['linear-gradient(180deg,#C0C0C0,#9E9E9E)','linear-gradient(180deg,#FFD700,#FFA000)','linear-gradient(180deg,#CD7F32,#A0522D)'];
+    podiumHTML='<div class="podium">';
+    podOrder.forEach(function(d,i){
+      var av=avS(d.pct);
+      podiumHTML+='<div class="pod-item" data-cuil="'+d.cuil+'">'
+        +'<div class="pod-name">'+d.nombre.split(' ').slice(0,2).join(' ')+'</div>'
+        +'<div class="pod-pct" style="color:'+pc(d.pct)+'">'+d.pct+'%</div>'
+        +sBadge(d)
+        +'<div class="pod-block" style="height:'+podHeights[i]+';background:'+podColors[i]+'">'
+        +'<span class="pod-medal">'+podMedals[i]+'</span></div>'
+        +'<div class="pod-sub">'+d.zona+'</div>'
         +'</div>';
     });
     podiumHTML+='</div>';
   }
 
   // CC options
-  let ccOpts='<option value="">— Todos los contratos —</option>';
-  DATA.contratos.forEach(function(c){
-    ccOpts+='<option value="'+c.id+'"'+(ccSel===c.id?' selected':'')+'>'+c.label+'</option>';
-  });
-
-  // Zone options
-  let zOpts='<option value="">📍 Todas las zonas</option>';
-  zl.forEach(function(z){ zOpts+='<option value="'+z+'"'+(zoneSel===z?' selected':'')+'>'+z+'</option>'; });
-
-  // Status col header
-  const statusTH=ct?'<th class="th-center">Estado</th>':'';
+  var ccOpts='<option value="">— Todos los contratos —</option>';
+  DATA.contratos.forEach(function(c){ccOpts+='<option value="'+c.id+'"'+(ccSel===c.id?' selected':'')+'>'+c.label+'</option>';});
+  var zOpts='<option value="">📍 Todas las zonas</option>';
+  zl.forEach(function(z){zOpts+='<option value="'+z+'"'+(zoneSel===z?' selected':'')+'>'+z+'</option>';});
 
   // Table rows
-  let rows='';
+  var medals=['🥇','🥈','🥉'];
+  var rows='';
   ranked.forEach(function(d,i){
-    const av=avS(d.pct);
-    const medals=['🥇','🥈','🥉'];
-    const posCell=i<3
-      ?'<td class="rank-medal">'+medals[i]+'</td>'
-      :'<td class="rank-medal"><span style="color:var(--text-dim);font-family:var(--font-d);font-size:13px">'+(i+1)+'</span></td>';
-    const statusCell=ct?'<td class="rank-status-cell">'+statusBadge(d)+'</td>':'';
+    var av=avS(d.pct);
+    var pos=i<3?'<td class="rank-pos">'+medals[i]+'</td>':'<td class="rank-pos" style="color:var(--text-dim);font-size:13px">'+(i+1)+'</td>';
+    var statusCell=ct?'<td style="text-align:center">'+sBadge(d)+'</td>':'';
     rows+='<tr data-cuil="'+d.cuil+'">'
-      +posCell
-      +'<td class="rank-ava"><div class="rank-ava-circle" style="background:'+av.bg+';color:'+av.fg+'">'+ini(d.nombre)+'</div></td>'
-      +'<td class="rank-name-cell"><div class="rank-name">'+d.nombre+'</div>'
-      +'<div class="rank-sub">'+d.puesto.replace('Conductor de ','C.')+' · '+d.zona+'</div></td>'
+      +pos
+      +'<td class="rank-ava-cell"><div class="rank-ava-c" style="background:'+av.bg+';color:'+av.fg+'">'+ini(d.nombre)+'</div></td>'
+      +'<td><div class="rank-name">'+d.nombre+'</div><div class="rank-sub">'+d.puesto.replace('Conductor de ','C.')+' · '+d.zona+'</div></td>'
       +statusCell
-      +'<td class="rank-units">'+d.score+'/11</td>'
+      +'<td style="text-align:center;font-family:var(--font-d);font-size:11px;color:var(--text-muted)">'+d.score+'/11</td>'
       +'<td class="rank-bar-cell"><div class="rank-bar-wrap">'
       +'<div class="rank-bar-bg"><div class="rank-bar-fill" style="width:'+d.pct+'%;background:'+pb(d.pct)+'"></div></div>'
-      +'<div class="rank-pct" style="color:'+pc(d.pct)+'">'+d.pct+'%</div>'
-      +'</div></td>'
+      +'<div class="rank-pct" style="color:'+pc(d.pct)+'">'+d.pct+'%</div></div></td>'
       +'</tr>';
   });
 
-  return '<div class="ranking-view">'
-    +'<div class="rank-header">'
-    +'<div class="rank-title">🏆 '+titulo+'</div>'
-    +'<select class="rank-cc-sel" id="rankCCSel">'+ccOpts+'</select>'
-    +'<select class="rank-zone-sel" id="rankZoneSel">'+zOpts+'</select>'
+  var statusTH=ct?'<th class="tc">Estado</th>':'';
+
+  return '<div class="rank-view">'
+    +'<div class="rank-hdr"><div class="rank-title">🏆 '+titulo+'</div>'
+    +'<select class="rank-sel" id="rankCCSel">'+ccOpts+'</select>'
+    +'<select class="rank-sel" id="rankZoneSel">'+zOpts+'</select>'
     +'</div>'
-    +'<div style="font-size:11px;color:var(--text-muted);margin-bottom:14px">Click en un conductor para ver su detalle · '+ranked.length+' conductores</div>'
+    +'<div style="font-size:11px;color:var(--text-muted);margin-bottom:12px">'+ranked.length+' conductores · Click en un conductor para ver su detalle</div>'
     +podiumHTML
-    +'<table class="rank-table"><thead><tr>'
-    +'<th class="th-center" style="width:48px">#</th>'
-    +'<th style="width:44px"></th>'
+    +'<table class="rank-tbl"><thead><tr>'
+    +'<th class="tc" style="width:44px">#</th>'
+    +'<th style="width:40px"></th>'
     +'<th>Conductor</th>'
     +statusTH
-    +'<th class="th-center">Unidades</th>'
+    +'<th class="tc">Unidades</th>'
     +'<th>Polivalencia</th>'
-    +'</tr></thead><tbody>'+rows+'</tbody></table>'
-    +'</div>';
+    +'</tr></thead><tbody>'+rows+'</tbody></table></div>';
 }
 
-
+// ── BIND EVENTS ──────────────────────────────────────────────────────
 function bindEvents(){
-  document.getElementById('btnRef')?.addEventListener('click',loadData);
-  document.getElementById('btnMode')?.addEventListener('click',toggleMode);
-  document.getElementById('btnPdf')?.addEventListener('click',showPdfModal);
-  document.getElementById('btnAlertClose')?.addEventListener('click',()=>{ST.alert=null;render();});
-  document.getElementById('btnClearF')?.addEventListener('click',()=>{ST.ccFilter=null;ST.filter='all';render();});
-  document.getElementById('pdfCloseBtn')?.addEventListener('click',hidePdfModal);
-  document.getElementById('pdfDisp')?.addEventListener('click',()=>exportPdf('disp'));
-  document.getElementById('pdfAll')?.addEventListener('click',()=>exportPdf('all'));
-  document.getElementById('pdfFalta')?.addEventListener('click',()=>exportPdf('falta'));
-  document.getElementById('pdfOverlay')?.addEventListener('click',e=>{if(e.target.id==='pdfOverlay') hidePdfModal();});
-  const srch=document.getElementById('srch');
-  if(srch) srch.addEventListener('input',e=>{
-    ST.search=e.target.value;render();
-    const el=document.getElementById('srch');el?.focus();el?.setSelectionRange(ST.search.length,ST.search.length);
-  });
-  document.getElementById('zoneSel')?.addEventListener('change',e=>{ST.zoneFilter=e.target.value||null;render();});
-  document.querySelectorAll('[data-f]').forEach(el=>el.addEventListener('click',()=>{ST.filter=el.dataset.f;render();}));
-  document.querySelectorAll('[data-tab]').forEach(el=>el.addEventListener('click',()=>{ST.tab=el.dataset.tab;render();}));
-  document.querySelectorAll('[data-hcc]').forEach(el=>el.addEventListener('click',()=>{
+  document.getElementById('btnRef')&&document.getElementById('btnRef').addEventListener('click',loadData);
+  document.getElementById('btnMode')&&document.getElementById('btnMode').addEventListener('click',toggleMode);
+  document.getElementById('btnPdf')&&document.getElementById('btnPdf').addEventListener('click',showPdf);
+  document.getElementById('btnAlertClose')&&document.getElementById('btnAlertClose').addEventListener('click',function(){ST.alert=null;render();});
+  document.getElementById('btnClearF')&&document.getElementById('btnClearF').addEventListener('click',function(){ST.ccFilter=null;ST.filter='all';render();});
+  document.getElementById('pdfCloseBtn')&&document.getElementById('pdfCloseBtn').addEventListener('click',hidePdf);
+  document.getElementById('pdfDisp')&&document.getElementById('pdfDisp').addEventListener('click',function(){exportPdf('disp');});
+  document.getElementById('pdfAll')&&document.getElementById('pdfAll').addEventListener('click',function(){exportPdf('all');});
+  document.getElementById('pdfFalta')&&document.getElementById('pdfFalta').addEventListener('click',function(){exportPdf('falta');});
+  document.getElementById('pdfOverlay')&&document.getElementById('pdfOverlay').addEventListener('click',function(e){if(e.target.id==='pdfOverlay') hidePdf();});
+  var srch=document.getElementById('srch');
+  if(srch) srch.addEventListener('input',function(e){ST.search=e.target.value;render();var el=document.getElementById('srch');if(el){el.focus();el.setSelectionRange(ST.search.length,ST.search.length);}});
+  var zoneSel=document.getElementById('zoneSel');
+  if(zoneSel) zoneSel.addEventListener('change',function(e){ST.zoneFilter=e.target.value||null;render();});
+  var rankCCSel=document.getElementById('rankCCSel');
+  if(rankCCSel) rankCCSel.addEventListener('change',function(e){ST.rankCC=e.target.value||'';render();});
+  var rankZoneSel=document.getElementById('rankZoneSel');
+  if(rankZoneSel) rankZoneSel.addEventListener('change',function(e){ST.rankZone=e.target.value||'';render();});
+  document.querySelectorAll('[data-f]').forEach(function(el){el.addEventListener('click',function(){ST.filter=el.dataset.f;render();});});
+  document.querySelectorAll('[data-tab]').forEach(function(el){el.addEventListener('click',function(){ST.tab=el.dataset.tab;render();});});
+  document.querySelectorAll('[data-hcc]').forEach(function(el){el.addEventListener('click',function(){
     ST.ccFilter=ST.ccFilter===el.dataset.hcc?null:el.dataset.hcc;
-    if(ST.ccFilter&&ST.tab==='detail') ST.tab='quick';render();
-  }));
-  document.querySelectorAll('.d-item[data-cuil]').forEach(el=>el.addEventListener('click',()=>{ST.selected=parseInt(el.dataset.cuil);ST.tab='detail';render();}));
-  document.querySelectorAll('.qv-card[data-cuil]').forEach(el=>el.addEventListener('click',()=>{ST.selected=parseInt(el.dataset.cuil);ST.tab='detail';render();}));
-  document.querySelectorAll('.td-d[data-cuil]').forEach(el=>el.addEventListener('click',()=>{ST.selected=parseInt(el.dataset.cuil);ST.tab='detail';render();}));
-  document.querySelectorAll('th[data-cc]').forEach(el=>el.addEventListener('click',()=>{ST.ccFilter=ST.ccFilter===el.dataset.cc?null:el.dataset.cc;render();}));
-  // Ranking selectors
-  document.getElementById('rankCCSel')?.addEventListener('change',e=>{ST.rankCC=e.target.value||'';render();});
-  document.getElementById('rankZoneSel')?.addEventListener('change',e=>{ST.rankZone=e.target.value||'';render();});
-  // Ranking row click → detail
-  document.querySelectorAll('.rank-table tr[data-cuil]').forEach(el=>el.addEventListener('click',()=>{ST.selected=parseInt(el.dataset.cuil);ST.tab='detail';render();}));
-  document.querySelectorAll('.podium-item[data-cuil]').forEach(el=>el.addEventListener('click',()=>{ST.selected=parseInt(el.dataset.cuil);ST.tab='detail';render();}));
-
-  document.querySelectorAll('[data-alert]').forEach(el=>el.addEventListener('click',e=>{
-    e.stopPropagation();if(!DATA)return;
-    const[cuil,ccId]=el.dataset.alert.split('|');
-    const d=DATA.conductores.find(x=>String(x.cuil)===cuil),ct=DATA.contratos.find(c=>c.id===ccId);
-    if(!d||!ct)return;
-    const{status,missing}=getStatus(d,ct);
-    ST.alert={nombre:d.nombre,contrato:ct.label,missing};render();
-  }));
+    if(ST.ccFilter&&ST.tab==='detail') ST.tab='quick';
+    render();
+  });});
+  document.querySelectorAll('.d-item[data-cuil]').forEach(function(el){el.addEventListener('click',function(){ST.selected=parseInt(el.dataset.cuil);ST.tab='detail';render();});});
+  document.querySelectorAll('.qv-card[data-cuil]').forEach(function(el){el.addEventListener('click',function(){ST.selected=parseInt(el.dataset.cuil);ST.tab='detail';render();});});
+  document.querySelectorAll('.td-d[data-cuil]').forEach(function(el){el.addEventListener('click',function(){ST.selected=parseInt(el.dataset.cuil);ST.tab='detail';render();});});
+  document.querySelectorAll('.rank-tbl tr[data-cuil]').forEach(function(el){el.addEventListener('click',function(){ST.selected=parseInt(el.dataset.cuil);ST.tab='detail';render();});});
+  document.querySelectorAll('.pod-item[data-cuil]').forEach(function(el){el.addEventListener('click',function(){ST.selected=parseInt(el.dataset.cuil);ST.tab='detail';render();});});
+  document.querySelectorAll('th[data-cc]').forEach(function(el){el.addEventListener('click',function(){ST.ccFilter=ST.ccFilter===el.dataset.cc?null:el.dataset.cc;render();});});
+  document.querySelectorAll('[data-alert]').forEach(function(el){el.addEventListener('click',function(e){
+    e.stopPropagation();if(!DATA) return;
+    var parts=el.dataset.alert.split('|');
+    var d=DATA.conductores.find(function(x){return String(x.cuil)===parts[0];});
+    var ct=DATA.contratos.find(function(c){return c.id===parts[1];});
+    if(!d||!ct) return;
+    ST.alert={nombre:d.nombre,contrato:ct.label,missing:getStatus(d,ct).missing};
+    render();
+  });});
 }
 
-const FALLBACK=[
-  {"id":"ARG-TTELARGDISTANCIA-VAR","label":"ARG · Larga Distancia","comp_req":[1,1,1,0],"unit_req":[0,0,0,0,1,0,0,0,0,1,0]},
-  {"id":"MGUE-4900096003-LIQ/SOL-YPF","label":"MGUE · Líq/Sól · YPF","comp_req":[1,1,1,1],"unit_req":[1,0,1,0,1,1,1,0,1,1,0]},
-  {"id":"MZAN-4900096003-LIQUIDAS-PS","label":"MZAN · Líquidas · PS","comp_req":[1,1,1,0],"unit_req":[1,1,0,0,0,0,0,0,1,1,0]},
-  {"id":"MZAN-4900096003-SOLIDAS-PS","label":"MZAN · Sólidas · PS","comp_req":[1,1,1,1],"unit_req":[1,0,0,0,1,0,0,0,0,1,0]},
-  {"id":"MZAN-4900114954-DESTILERIA-YPF","label":"MZAN · Destilería · YPF","comp_req":[1,1,1,0],"unit_req":[1,1,1,0,0,0,0,0,1,0,0]},
-  {"id":"MZAN-LIQ/SOL/PORTA-TANGOENERGY","label":"MZAN · Liq/Sól/Porta · TE","comp_req":[1,1,1,0],"unit_req":[1,1,0,0,0,0,0,0,1,1,1]},
-  {"id":"NQN-4900096002-LIQSUPCHUPA-YPF","label":"NQN · LiqSupChupa · YPF","comp_req":[1,1,1,0],"unit_req":[1,1,0,0,0,0,0,1,0,1,0]},
-  {"id":"NQN-4900100771-RDLS-YPF","label":"NQN · RDLS · YPF","comp_req":[1,0,1,1],"unit_req":[0,0,0,0,1,0,0,0,0,1,0]},
-  {"id":"NQN-490012074-SOLIDAS-YPF","label":"NQN · Sólidas · YPF","comp_req":[1,0,1,1],"unit_req":[0,0,0,0,1,0,0,0,0,1,0]},
-  {"id":"NQN-CTOCW1009149-SHELL-CAMSTH","label":"NQN · Shell · CAMSTH","comp_req":[1,1,1,0],"unit_req":[1,0,0,0,0,0,0,0,1,1,0]},
-  {"id":"NQN-TRANSPORTESANDBOX-TSB","label":"NQN · Transport · TSB","comp_req":[1,1,1,0],"unit_req":[1,1,0,0,0,0,0,0,0,1,0]},
+// ── FALLBACK ─────────────────────────────────────────────────────────
+var FALLBACK=[
+  {id:"ARG-TTELARGDISTANCIA-VAR",label:"ARG · Larga Distancia",comp_req:[1,1,1,0],unit_req:[0,0,0,0,1,0,0,0,0,1,0]},
+  {id:"MGUE-4900096003-LIQ/SOL-YPF",label:"MGUE · Líq/Sól · YPF",comp_req:[1,1,1,1],unit_req:[1,0,1,0,1,1,1,0,1,1,0]},
+  {id:"MZAN-4900096003-LIQUIDAS-PS",label:"MZAN · Líquidas · PS",comp_req:[1,1,1,0],unit_req:[1,1,0,0,0,0,0,0,1,1,0]},
+  {id:"MZAN-4900096003-SOLIDAS-PS",label:"MZAN · Sólidas · PS",comp_req:[1,1,1,1],unit_req:[1,0,0,0,1,0,0,0,0,1,0]},
+  {id:"MZAN-4900114954-DESTILERIA-YPF",label:"MZAN · Destilería · YPF",comp_req:[1,1,1,0],unit_req:[1,1,1,0,0,0,0,0,1,0,0]},
+  {id:"MZAN-LIQ/SOL/PORTA-TANGOENERGY",label:"MZAN · Liq/Sól/Porta · TE",comp_req:[1,1,1,0],unit_req:[1,1,0,0,0,0,0,0,1,1,1]},
+  {id:"NQN-4900096002-LIQSUPCHUPA-YPF",label:"NQN · LiqSupChupa · YPF",comp_req:[1,1,1,0],unit_req:[1,1,0,0,0,0,0,1,0,1,0]},
+  {id:"NQN-4900100771-RDLS-YPF",label:"NQN · RDLS · YPF",comp_req:[1,0,1,1],unit_req:[0,0,0,0,1,0,0,0,0,1,0]},
+  {id:"NQN-490012074-SOLIDAS-YPF",label:"NQN · Sólidas · YPF",comp_req:[1,0,1,1],unit_req:[0,0,0,0,1,0,0,0,0,1,0]},
+  {id:"NQN-CTOCW1009149-SHELL-CAMSTH",label:"NQN · Shell · CAMSTH",comp_req:[1,1,1,0],unit_req:[1,0,0,0,0,0,0,0,1,1,0]},
+  {id:"NQN-TRANSPORTESANDBOX-TSB",label:"NQN · Transport · TSB",comp_req:[1,1,1,0],unit_req:[1,1,0,0,0,0,0,0,0,1,0]},
 ];
 
-render();loadData();setInterval(loadData,AUTO_REFRESH_MS);
+// ── INIT ─────────────────────────────────────────────────────────────
+render();
+loadData();
+setInterval(loadData,AUTO_REFRESH_MS);
 </script>
 </body>
 </html>
