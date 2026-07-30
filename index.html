@@ -729,7 +729,7 @@ function buildApp(){
         <div class="tab ${ST.tab==='ranking'?'on':''}" data-tab="ranking">🏆 Ranking</div>
       </div>
 
-      ${ST.tab==='quick'?buildQuick():ST.tab==='detail'?buildDetail(sel):ST.tab==='ranking'?buildRanking():buildMatrix(drivers)}
+      ${ST.tab==='quick'?buildQuick():ST.tab==='detail'?buildDetail(sel):ST.tab==='matrix'?buildMatrix(drivers):buildRanking()}
     </div>
   </div>`;
 }
